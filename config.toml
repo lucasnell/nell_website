@@ -1,0 +1,14 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Ives Lab"
+theme = "kube"
+description = ""
+Paginate = 1
+[Params]
+  RSSLink = ""
+  author = "Tony Ives"
+  github = "" # add your github profile name
+  twitter = "" # add your twitter profile
+  email = ""
+relativeurls = true
+publishdir = "../"

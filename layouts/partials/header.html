@@ -1,0 +1,40 @@
+{{ define "title"}} {{ .Site.Title}} {{end}}
+
+<header id="header">
+    
+<link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/academicons.css"/>
+
+    <!-- Banner image -->
+    <div id="banner">
+        <img src="/img/Myvatn_header.jpg"/>
+        <h1>Ives Lab</h1>
+    </div>
+
+    <!-- Navigation menu when minimized on small screens -->
+    <div class="show-sm">
+        <div id="nav-toggle-box">
+            <a data-component="toggleme" data-target="#top" href="#" id="nav-toggle">
+                <i class="kube-menu"></i>
+            </a>
+        </div>
+    </div>
+    
+    <!-- Navigation menu on larger screens -->
+    <div class="hide-sm" id="top">
+        <nav id="top-nav-main">
+            <ul>
+                {{ $currentNode := . }}
+                {{ range .Site.Menus.main }}
+                {{ $is := $currentNode.IsMenuCurrent "main" . }}
+                <li>
+                    <a href="{{ .URL }}" {{ if $is }} class="menu-active"{{end}}>
+                        {{ .Name }}
+                    </a>
+                </li>
+                {{end}}
+            </ul>
+        </nav>
+    </div>
+
+</header>

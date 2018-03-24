@@ -1,0 +1,275 @@
+
+
+/* Figures for Photos page */
+#photos_fig {
+    width: 50%; }
+
+/* Publication section formatting */
+#publication_section {
+    font-size: 20px;
+    line-height: 24px; }
+    #publication_section h1 {
+        font-size: 32px;
+        line-height: 40px;
+        padding-top: 30px;
+        padding-bottom: 20px; }
+    #publication_section ul {
+    list-style: none;
+    padding-left: 2em; }
+    #publication_section ul li {
+        padding-bottom: 10px;
+        text-indent: -2em; }
+    #publication_section table {
+        padding-top: 0;
+        margin-top: 0;
+        font-size: 20px;
+        line-height: 24px;
+        width: auto; }
+    #publication_section thead {
+        display: none; }
+    #publication_section th {
+        border: none; }
+    #publication_section td {
+        border: none;
+        padding: 0;
+        padding-right: 5px;
+        max-width: 100%;
+        white-space: nowrap; }
+
+
+/* Making sure menu shows up at 768px size */
+@media (max-width: 768px) {
+  .hide-sm {
+    display: none !important; } }
+@media (width: 768px) {
+  .show-sm {
+    display: block !important; } }
+@media (min-width: 769px) {
+  .show-sm {
+    display: none !important; } }
+
+
+
+
+/* Make homepage font a bit larger */
+.index {
+    font-size: 24px;
+    line-height: 36px; }
+
+/* Add at symbol before email domain */
+.dmn::before {
+    content: "\0040"; }
+
+/* Adjust top menu item color when it's the page you're currently on */
+.menu-active {
+    font-weight: 900;
+    border-bottom: 2px solid black; }
+.menu-active:hover {
+    border-bottom: 2px solid rgb(255, 153, 51); }
+
+
+/* Formatting for individual person's entry on the people page */
+#person {
+    font-size: 20px;
+    line-height: 28px;
+    padding-bottom: 72px; }
+    #person img {
+        margin: 0;
+        width: 100%;
+        padding: 0;
+        max-width: 400px; }
+    #person h3 {
+        margin-bottom: 20px; }
+    #person h4 {
+        margin-bottom: 20px;
+        font-weight: 400; }
+
+/* "People type" is Current vs Alumni  */
+#people_type {
+    font-size: 20px;
+    line-height: 28px;
+    padding-bottom: 72px; }
+    #people_type h1 {
+        text-align: center; }
+    #people_type h2 {
+        padding-top: 0; 
+        padding-bottom: 10px; }
+
+
+/* Sets formatting for individual topics on the research page */
+#research_entry {
+    font-size: 20px;
+    line-height: 28px;
+    padding-bottom: 72px; }
+    #research_entry h1 {
+        font-size: 32px;
+        line-height: 40px;}
+    #research_entry h3 {
+        color:rgb(150, 150, 150); }
+    #research_entry figure {
+        padding-top: 20px; }
+    #research_entry img {
+        display: block;
+        margin: auto;
+        width: auto; }
+
+/* Adds a limit to the width of the header (banner and nav menu) area */
+#header {
+  margin: auto;
+  max-width: 1128px;}
+
+
+
+/* Settings for the 404 (page not found) page */
+#hero_404 {
+  padding-top: 48px;
+  padding-bottom: 56px;
+  text-align: center; 
+  vertical-align: middle; }
+  #hero_404 h1 {
+    position: relative;
+    top: 0;
+    right: 0;
+    left: 0;
+    max-width: 880px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
+    font-size: 64px;
+    line-height: 72px;
+    font-weight: 900; }
+  #hero_404 img {
+    position: relative;
+    max-height: 500px;
+    width: 100% auto;
+    z-index: -1; 
+    vertical-align:middle; }
+  #hero_404 p {
+    max-width: 740px;
+    margin: auto;
+    font-size: 30px;
+    line-height: 42px;
+    color: rgba(0, 0, 0, 0.5);
+    margin-top: 0;
+    padding-top: 28px;
+    margin-bottom: 0;
+    position: relative; }
+      
+      
+
+
+
+
+/* Settings for banner image and text above it */
+#banner {    
+    position: relative;
+    width:100%;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    float: top;
+    padding-top: 0; }
+    #banner img {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: -1; }
+    #banner h1 {
+        position: absolute;
+        margin: 0;
+        top: 10px;
+        left: 20px;
+        font-family: Lato, Arial, sans-serif;
+        font-size: 80px;
+        line-height: 92px;
+        font-weight: 900;
+        max-width: 880px;
+        color: rgba(255, 255, 255, 0.7); }
+
+
+
+/* Changing settings for smallish screens (e.g., iPad narrow side) */
+@media (min-width: 384px) and (max-width: 768px) {
+    #hero_404 {
+        margin-top: 32px;
+        padding-top: 0;
+        padding-left: 20px;
+        padding-right: 20px; }
+        #hero_404 h1 {
+            font-size: 40px;
+            line-height: 48px; }
+        #hero_404 p {
+            font-size: 20px;
+            line-height: 28px; }
+    #banner {
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0; }
+        #banner h1 {
+            font-size: 64px;
+            line-height: 72px;
+            bottom: 0;
+            top: 0; }
+    #person img {
+        padding-right: 0;
+        padding-bottom: 25px;
+        width: 25%; }
+    #photos_fig {
+        width: 100%; } }
+
+
+
+/* Changing settings for very small (smart phone) screens */
+@media (max-width: 384px) {
+    .large {
+        font-size: 16px;
+        line-height: 20px; }
+    #hero_404 {
+        margin-top: 32px;
+        padding-top: 0;
+        padding-left: 20px;
+        padding-right: 20px; }
+        #hero_404 h1 {
+            font-size: 40px;
+            line-height: 48px; }
+        #hero_404 p {
+            font-size: 20px;
+            line-height: 28px; }
+    #banner {
+        padding-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0; }
+        #banner h1 {
+            font-size: 40px;
+            line-height: 48px;
+            bottom: 0;
+            top: 0; }
+    #people_type {
+        padding-bottom: 36px;
+        font-size: 16px;
+        line-height: 20px; }
+        #people_type h2 {
+            padding-top: 16px;
+            padding-bottom: 8px; }
+    #person {
+        font-size: 16px;
+        line-height: 20px;
+        padding-bottom: 24px; }
+        #person img {
+            width: 75%;
+            padding-right: 0;
+            padding-bottom: 25px; }
+    #research_entry {
+        font-size: 16px;
+        line-height: 20px; }
+    #publication_section {
+        font-size: 16px;
+        line-height: 20px; }
+    #photos_fig {
+        width: 100%; } }
+
+
+
+

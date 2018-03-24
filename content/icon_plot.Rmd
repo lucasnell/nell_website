@@ -1,0 +1,38 @@
+---
+title: "Website icon plot"
+author: "Lucas Nell"
+date: 2017-05-10T16:59:02-05:00
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+suppressPackageStartupMessages({
+    library(ggplot2)
+    library(dplyr)
+})
+```
+
+```{r time_series}
+make_series <- function(a1, a2 = 0, length_out = 100) {
+    y <- numeric(length_out)
+    y[1] <- 0
+    y[2] <- rnorm(1)
+    for (t in 3:length_out) {
+        y[t] <- a1 * y[(t - 1)] + a2 * y[(t - 2)] + rnorm(1)
+    }
+    return(y)
+}
+
+set.seed(100)
+ts_plot <- data_frame(N = make_series(0.5, 0.5001),
+           t = 1:100) %>% 
+    ggplot(aes(t, N)) +
+    theme_classic() +
+    theme(axis.text = element_blank(), axis.ticks = element_blank(), 
+          axis.title = element_blank()) +
+    geom_line(size = 0.5, color = 'firebrick1')
+
+ggsave('../static/icon/icon.png', ts_plot, width = 1, height = 1, dpi = 64, units = 'in')
+
+```
+

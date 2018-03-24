@@ -1,0 +1,73 @@
+{{- $name := .Get "name" -}}
+{{- $title := .Get "title" -}}
+{{- $image := .Get "image" -}}
+{{- $office := .Get "office" -}}
+{{- $email_domain := .Get "email_domain" -}}
+{{- $email_user := .Get "email_user" -}}
+{{- $website := .Get "website" -}}
+{{- $phone := .Get "phone" -}}
+{{- $cv := .Get "cv" -}}
+{{- $twitter := .Get "twitter" -}}
+{{- $scholar := .Get "scholar" -}}
+{{- $github := .Get "github" -}}
+{{- $impactstory := .Get "impactstory" -}}
+
+
+<div id="person">
+    {{ if $title }}
+    <h3 style="margin-bottom: 0;">{{ $name }}</h3>
+    <h4>{{ $title }}</h4>
+    {{ else }}
+    <h3>{{ $name }}</h3>
+    {{ end }}
+    <div class="row">
+        <div class="col col-4">
+            <img src="{{ $image }}">
+            <ul class="fa-ul">
+                {{ if $office }}
+                <li><i class="fa-li fa fa-building-o"></i>{{ $office }}</li>
+                {{ end }}
+                {{ if $phone }}
+                <li><i class="fa-li fa fa-phone"></i>{{ $phone }}</li>
+                {{ end }}
+                {{ if $email_domain }}
+                <li>
+                    <i class="fa-li fa fa-envelope"></i>
+                    {{ $email_user }}<span class="dmn">{{ $email_domain }}</span>
+                </li>
+                {{ end }}
+                {{ if $website }}
+                <li>
+                    <i class="fa-li fa fa-home"></i><a href={{ $website }}>website</a>
+                </li>
+                {{ end }}
+                {{ if $cv }}
+                <li><i class="fa-li fa fa-file-pdf-o"></i>
+                <a href={{ $cv }}>CV</a></li>
+                {{ end }}
+                {{ if $twitter }}
+                <li><i class="fa-li fa fa-twitter"></i>
+                <a href="https://twitter.com/{{ $twitter }}">Twitter</a></li>
+                {{ end }}
+                {{ if $scholar }}
+                <li><i class="ai-li ai ai-google-scholar"></i>
+                    <a href="{{ $scholar }}">Google Scholar</a>
+                </li>
+                {{ end }}
+                {{ if $github }}
+                <li><i class="fa-li fa fa-github"></i>
+                    <a href="https://github.com/{{ $github }}">GitHub</a>
+                </li>
+                {{ end }}
+                {{ if $impactstory }}
+                <li><i class="ai-li ai ai-impactstory"></i>
+                    <a href="{{ $impactstory }}">Impactstory</a>
+                </li>
+                {{ end }}
+        </ul>
+        </div>
+        <div class="col col-7 offset-1">
+            {{ .Inner }}
+        </div>
+    </div>
+</div>

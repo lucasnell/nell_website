@@ -1,0 +1,11 @@
+---
+title: "Multispecies interactions"
+description: ""
+date: 2017-05-09T17:00:28-05:00
+weight: 1
+image: "/img/interactions.png"
+---
+
+
+How do interactions among species within an ecological community influence the response of the community to environmental perturbations? This is a central question in understanding how community structure affects the resistance and resilience of ecosystems. I am particularly interested in the application of stochastic models to multispecies data sets, using patterns of population fluctuations to explore the consequences of species interactions for the general dynamical properties of the system.
+

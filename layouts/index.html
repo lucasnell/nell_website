@@ -1,0 +1,21 @@
+{{ define "title"}} {{ .Site.Title}} {{end}}
+{{ define "header"}} {{ partial "header" .}} {{end}}
+{{ define "main"}}
+
+<div id="main">
+
+    
+    
+    {{ if .Content }}
+    <div id="kube-component" class="content">
+        
+        <div id="kube-component-large" class="large index">
+            {{ .Content }}
+        </div>
+
+    </div>
+    {{ end }}
+    
+</div>
+{{ end }}
+

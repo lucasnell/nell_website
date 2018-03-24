@@ -1,0 +1,8 @@
+{{- $image := .Get 0 -}}
+
+<figure id="photos_fig">
+    <img src="{{ $image }}">
+    <figcaption>
+        {{ .Inner }}
+    </figcaption>
+</figure>

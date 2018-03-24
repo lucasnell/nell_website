@@ -1,0 +1,39 @@
+{{ define "title"}} {{ .Title }} {{end}}
+{{ define "header"}} {{ partial "header" .}} {{end}}
+
+{{ define "main"}}
+
+<div id="main">
+  
+    <div id="kube-component" class="content">
+        
+        {{ partial "toc" .}}
+        
+        {{ if .Content }}
+        <div id="kube-component-large" class="large">
+            {{ .Content }}
+        </div>
+        {{ end }}
+        
+        {{ range .Data.Pages.ByWeight }}
+        <div id="people_type">
+            
+            <h1>{{ .Title }}</h1>
+            
+            {{ if .Params.description }}
+            <h2>{{ .Params.description }}</h2>
+            {{ end }}
+            
+            {{ .Content }}
+        </div>
+        {{ end }}
+    
+    </div>
+
+  
+  
+</div>
+{{ end }}
+
+
+ 
