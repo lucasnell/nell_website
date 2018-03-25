@@ -1,0 +1,28 @@
+{{ define "title"}} {{ .Title}} {{end}}
+{{ define "header"}} {{ partial "header" .}} {{end}}
+
+{{ define "main"}}
+<div id="hero" class="wrap">
+    <h1 itemprop="headline">  {{.Title}}</h1>
+    {{ if .Description }}
+        <blockquote itemprop="description">{{ .Description }}</blockquote>
+    {{ end }}
+</div>
+<ul id="posts">
+    
+    {{ range .Data.Pages.ByWeight }}
+        <div itemscope itemtype="http://schema.org/CreativeWork">
+        <h2 class="title">
+            <a href="{{ .Permalink }}" itemprop="headline">{{ .Title }}</a>
+        </h2>
+        <hr>
+        <p itemprop="about">{{ .Params.description }}</p>
+        </div>
+    {{ end }}
+
+</div>
+
+
+
+{{ end }}
+{{ define "footer"}} {{ partial "footer.html" .}} {{ end }}
