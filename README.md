@@ -1,25 +1,19 @@
-`ives_lab`
+`nell_website`
 ========
 
-Code for the Ives Lab website
+Code for Lucas Nell's website
 --------
 
 This repo contains
-(1) the code necessary to build the static html website using Hugo through the R package `blogdown`
+(1) the code necessary to build the static html website using Hugo through the R 
+package `blogdown`
 and
 (2) the static html website that is sent to the web hosting service.
 
 If you're looking to make some changes to the website and seeking instruction, you 
 should start with the ["Overall procedure"](#overall-procedure) section below.
 
-> __Very important note:__ ONLY make changes to files in the `_build` folder.
-> If you make changes to the parent `ives_lab` folder, they may disappear the next 
-> time someone builds the site.
-> So instead of editing this `README.md` at `/ives_lab/README.md`, edit it at 
-> `/ives_lab/_build/static/README.md`.
-
-
-See [the contents file](CONTENTS.md) for details on the `_build` folder's contents.
+See [the contents file](CONTENTS.md) for details on this repo's contents.
 
 
 ## Table of Contents
@@ -92,8 +86,9 @@ The People, Publications, and Photos sections use shortcodes.
 
 #### Important notes:
 
-- Only make changes inside the `_build` folder! Edits to the parent `ives_lab` directory 
-    files may disappear the next time someone builds the site.
+- Only make changes inside the `_build` folder!
+    Edits to the parent `nell_website` directory files will probably disappear the next
+    time someone builds the site.
 - Although I have "Commit your changes" as a single step, you really should do this 
     multiple times, especially if you're making significant changes.
 - I recommend using RStudio to change content because it provides useful 
@@ -102,14 +97,14 @@ The People, Publications, and Photos sections use shortcodes.
 #### Steps:
 
 1. Pull changes from the GitHub repo to your local repo.†
-    - If using the GitHub app:
-        1. Select the `ives_lab` repo
-        2. Click the tab that says "Pull origin" or "Fetch origin"
-            (it should be the right-most tab)
+    - In GitKraken:
+        1. Select the `nell_website` repo
+        2. Click the button that says "Pull"
+            (it should at the top, very near the middle)
     - If using the command line:
-        1. `cd` to the `ives_lab` directory
+        1. `cd` to the `nell_website` directory
         2. Run `git pull`
-2. Open `/ives_lab/_build/ives_lab.Rproj` in RStudio.
+2. Open `/nell_website/_build/nell_website.Rproj` in RStudio.
 3. Make your changes (see the next sections for how to make changes for each page).
 4. Build the website.
     1. Run `blogdown::serve_site()` in R
@@ -117,22 +112,24 @@ The People, Publications, and Photos sections use shortcodes.
     3. When it looks good, stop the `blogdown::serve_site()` function by hitting escape
         or by clicking the stop button above the console in RStudio
 5. Commit your changes to the local git repository (the one on your computer).
-    - In the GitHub app:
-        1. Select the `ives_lab` repo
-        2. Enter a summary of your changes in the "Summary" box in the bottom-left corner
+    - In GitKraken:
+        1. Select the `nell_website` repo
+        2. Enter a summary of your changes in the "Summary" box in the bottom-right corner
             (if you need to add more information, you should use the "Description" box)
-        3. Then click "Commit to master"
+        3. Then click "Commit changes to X files" where X can change
     - In the terminal:
-        1. `cd` to the `ives_lab` directory
-        2. If you added files, run `git add .` (the trailing period is necessary)
+        1. `cd` to the `nell_website` directory
+        2. To "stage" all file changes, run `git add .` (the trailing period is
+            necessary). To stage changes to only some files, replace `.` above
+            with a list of all the files you want to stage separated by spaces.
         3. Then `git commit -am "<message>"`, where `<message>` is a brief summary of
             the changes you made.
 6. Push the changes from your local git repo to your GitHub repo.
-    - In the GitHub app:
-        1. Select the `ives_lab` repo
-        2. Click the tab that says "Push origin" (it should be the right-most tab)
+    - In GitKraken:
+        1. Select the `nell_website` repo
+        2. Click the tab that says "Push" (it should at the top, very near the middle)
     - In the terminal:
-        1. `cd` to the `ives_lab` directory
+        1. `cd` to the `nell_website` directory
         2. Run `git push`
 7. Pull the GitHub repo changes to the website builder from DoIT.
     1. Login at https://linux3.dwh.doit.wisc.edu:8443/login_up.php
@@ -142,13 +139,13 @@ The People, Publications, and Photos sections use shortcodes.
 
 † This is done in case someone else has made changes to the repo since you last pulled
 from it.
-Without you pulling before making your own changes, your changes would conflict
-with theirs. I recall this being annoying to fix.
+Without you pulling before making your own changes, your changes might conflict
+with theirs.
 
 
 ## Home page
 
-> File to edit: `/ives_lab/_build/content/_index.md`
+> File to edit: `/nell_website/_build/content/_index.md`
 
 Simply change the text as you see fit.
 
@@ -156,7 +153,7 @@ Simply change the text as you see fit.
 
 #### Current people
 
-> File to edit: `/ives_lab/_build/content/people/current.md`
+> File to edit: `/nell_website/_build/content/people/current.md`
 
 This section uses a shortcodes to insert people's information in a specific way
 formatting-wise. To add a new person, start with the following form:
@@ -198,7 +195,7 @@ Each of these is inserted the same as name, image, etc.
 
 #### Alumni
 
-> File to edit: `/ives_lab/_build/content/people/alumni.md`
+> File to edit: `/nell_website/_build/content/people/alumni.md`
 
 These people were inserted into either the grad student or post doc list with more
 recent people at the top.
@@ -208,7 +205,7 @@ recent people at the top.
 
 ## Photos page
 
-> File to edit: `/ives_lab/_build/content/photos/_index.md`
+> File to edit: `/nell_website/_build/content/photos/_index.md`
 
 Each entry is inserted using a shortcode, with the following format: 
 
@@ -228,7 +225,7 @@ where...
 
 ## Prospective students page
 
-> File to edit: `/ives_lab/_build/content/prospective_students.Rmd`
+> File to edit: `/nell_website/_build/content/prospective_students.Rmd`
 
 Simply change the text as you see fit.
 
@@ -237,7 +234,7 @@ Simply change the text as you see fit.
 
 ## Publications page
 
-> File to edit: `/ives_lab/_build/content/publications.md`
+> File to edit: `/nell_website/_build/content/publications.md`
 
 For any additional publication sections, they should follow the following form:
 
@@ -262,13 +259,13 @@ where...
     Ecology 59: 1039-1052.")
 
 To add a table of contents to this page, make `toc = true` in the yaml header of the
-`/ives_lab/_build/content/publications/_index.md` file.
+`/nell_website/_build/content/publications/_index.md` file.
 
 
 
 ## Research page
 
-> File to edit: `/ives_lab/_build/content/research/<FILE_NAME>.Rmd`
+> File to edit: `/nell_website/_build/content/research/<FILE_NAME>.Rmd`
 
 To create a new sub-section here, you have to add a new R markdown file with a name of
 your choosing.
@@ -281,7 +278,7 @@ To edit current files, just change the text in the relevant R markdown file how 
 see fit.
 
 To add a table of contents to this page, make `toc = true` in the yaml header of the
-`/ives_lab/_build/content/research/_index.md` file.
+`/nell_website/_build/content/research/_index.md` file.
 
 
 

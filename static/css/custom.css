@@ -8,6 +8,8 @@
 #publication_section {
     font-size: 20px;
     line-height: 24px; }
+    #publication_section div {
+        padding-left: 4em; }
     #publication_section h1 {
         font-size: 32px;
         line-height: 40px;
