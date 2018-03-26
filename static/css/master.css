@@ -98,7 +98,7 @@ h1, h2, h3, h4, h5, h6 {
     #top #top-brand a:visited {
         color: black; }
     #top #top-brand a:hover {
-      color: rgb(255, 153, 51);
+      color: rgb(102, 153, 51);
       -moz-transition: all linear 0.2s;
       transition: all linear 0.2s; 
       text-decoration: none; }
@@ -120,7 +120,7 @@ h1, h2, h3, h4, h5, h6 {
       color: #000;
       text-decoration: none; }
       #top #top-nav-main a:hover {
-        color: rgb(255, 153, 51);
+        color: rgb(102, 153, 51);
         -moz-transition: all linear 0.2s;
         transition: all linear 0.2s; 
         text-decoration: none; }
@@ -261,7 +261,7 @@ h1, h2, h3, h4, h5, h6 {
       top: 0;
       left: 50%;
       margin-left: -20px;
-      background: rgb(255, 153, 51); }
+      background: rgb(102, 153, 51); }
 
 #intro {
   margin-top: 56px;
@@ -276,7 +276,7 @@ h1, h2, h3, h4, h5, h6 {
     top: -68px;
     left: 50%;
     margin-left: -20px;
-    background: rgb(255, 153, 51); }
+    background: rgb(102, 153, 51); }
   #intro h6 {
     color: rgba(0, 0, 0, 0.5);
     font-weight: normal; }
@@ -675,11 +675,11 @@ body.page-account #hero {
       color: #707070;
       text-decoration: none; }
       #docs-main #side nav li a:hover {
-        color: rgb(255, 153, 51);
+        color: rgb(102, 153, 51);
         text-decoration: underline; }
     #docs-main #side nav span,
     #docs-main #side nav li.active a {
-      color: rgb(255, 153, 51);
+      color: rgb(102, 153, 51);
       font-weight: bold; }
       #docs-main #side nav span:hover,
       #docs-main #side nav li.active a:hover {
@@ -954,7 +954,7 @@ body.page-account #hero {
     top: -12px;
     left: 50%;
     margin-left: -60px;
-    background: rgb(255, 153, 51);
+    background: rgb(102, 153, 51);
     color: #fff;
     font-size: 11px;
     text-transform: uppercase;
