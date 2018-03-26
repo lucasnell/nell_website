@@ -12,6 +12,7 @@ Paginate = 1
 relativeurls = true
 baseURL = ""
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+googleAnalytics = "UA-49535058-2"
 
 [[menu.main]]
     name = "CV"

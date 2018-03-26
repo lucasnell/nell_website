@@ -14,6 +14,11 @@ sequencing for populations with complex demographic histories and on the propert
 underlying clonal evolution in experimental populations of pea aphids.
 -->
 
+
+
+<img src="/img/first_gator.jpg" class="center" />
+
+
 I'm a PhD student in the [Department of Integrative Biology](http://ibio.wisc.edu/) 
 at the [University of Wisconsin–Madison](http://www.wisc.edu/). My advisor is 
 [Dr. Anthony Ives](http://ives.labs.wisc.edu).
@@ -23,5 +28,8 @@ structure and evolutionary outcomes—and how they themselves are shaped by natu
 selection. I seek to pursue these questions using a combination of computational,
 experimental, and comparative field approaches.
 
-Please see below for more information on my previous research,
+
+<!---
+Please see above for more information on my previous research,
 or click the icons on the left to visit my other pages.
+-->

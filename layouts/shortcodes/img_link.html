@@ -1,0 +1,9 @@
+{{- $link := .Get "link" -}}
+{{- $type := .Get "type" -}}
+<span><a href={{ $link }} id="image_link">
+{{ if eq $type "pdf" }} <img src="../img/pdf.svg" />
+{{ else if eq $type "closed" }} <img src="../img/closed_access.svg" />
+{{ else if eq $type "open" }} <img src="../img/open_access.svg" />
+{{ else if eq $type "recording" }} <img src="../img/recording.svg" />
+{{else}} <img src="../img/icon.png" />
+{{ end }} </a> </span>
