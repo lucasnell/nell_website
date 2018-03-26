@@ -1048,7 +1048,8 @@ tr.border-none td {
     order: 1; }
   #footer nav {
     order: 2;
-    margin-left: auto; }
+    margin-left: auto;
+    margin-right: auto; }
   #footer nav ul {
     display: flex; }
   #footer nav ul li {

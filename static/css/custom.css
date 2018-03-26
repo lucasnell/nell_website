@@ -1,3 +1,6 @@
+#footer nav ul li a img {
+    height: 40px; }
+
 /* For centering images, use <img ... class="center" /> */
 .center {
     display: block;
@@ -81,7 +84,7 @@
     font-weight: 900;
     border-bottom: 2px solid black; }
 .menu-active:hover {
-    border-bottom: 2px solid rgb(255, 153, 51); }
+    border-bottom: 2px solid rgb(102, 153, 51); }
 
 
 /* Formatting for individual person's entry on the people page */
