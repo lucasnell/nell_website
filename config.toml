@@ -9,10 +9,12 @@ Paginate = 1
   github = "" # add your github profile name
   twitter = "" # add your twitter profile
   email = ""
+  disablePathToLower = true # Do not make the url/path to lowercase
 relativeurls = true
 baseURL = ""
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 googleAnalytics = "UA-49535058-2"
+
 
 [[menu.main]]
     name = "CV"
