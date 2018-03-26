@@ -15,10 +15,7 @@ underlying clonal evolution in experimental populations of pea aphids.
 -->
 
 
-
-
-<img src="/img/first_gator.jpg" class="center" />
-
+{{% person image="/img/portrait.jpg" %}}
 
 I'm a PhD student in the [Department of Integrative Biology](http://ibio.wisc.edu/) 
 at the [University of Wisconsin–Madison](http://www.wisc.edu/). My advisor is 
@@ -28,6 +25,12 @@ I am most fascinated by how complex networks of species interactions drive commu
 structure and evolutionary outcomes—and how they themselves are shaped by natural
 selection. I seek to pursue these questions using a combination of computational,
 experimental, and comparative field approaches.
+
+
+{{% /person %}}
+
+
+
 
 
 <!---
