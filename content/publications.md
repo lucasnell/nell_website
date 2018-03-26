@@ -2,7 +2,7 @@
 title = "Publications"
 menu = "main"
 weight = 3
-url = "/publications/"
+url = "publications"
 +++
 
 <script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>

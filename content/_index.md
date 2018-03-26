@@ -3,7 +3,7 @@ description = ""
 title = "Home"
 menu = "main"
 weight = 1
-url = "/"
+url = ""
 +++
 
 <!---
@@ -13,6 +13,7 @@ processes interact. For my dissertation I am focusing on developing tools for si
 sequencing for populations with complex demographic histories and on the properties
 underlying clonal evolution in experimental populations of pea aphids.
 -->
+
 
 
 

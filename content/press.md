@@ -2,7 +2,7 @@
 title = "Press"
 menu = "main"
 weight = 4
-url = "/press/"
+url = "press"
 +++
 
 

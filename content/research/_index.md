@@ -1,7 +1,7 @@
 +++
 description = ""
 title = "Research"
-url = "/research/"
+url = "research"
 toc = false
 +++
 <!-- change toc to true if you want a table of contents -->
