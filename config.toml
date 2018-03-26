@@ -21,3 +21,11 @@ googleAnalytics = "UA-49535058-2"
     name = "CV"
     weight = 999
     url = "/pdf/Nell_CV.pdf"
+
+
+[[headers]]
+  for = "/*.woff"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Content-Type = "application/font-woff"
+
