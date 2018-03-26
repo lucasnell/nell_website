@@ -1,9 +1,9 @@
 +++
 description = ""
 title = "Home"
-draft = true
 menu = "main"
 weight = 1
+url = "/"
 +++
 
 <!---
