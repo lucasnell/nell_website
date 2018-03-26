@@ -54,7 +54,7 @@ observed near and within colonies (see [this video](https://youtu.be/34cmq9la-Jw
 Fig S1 from [here](https://goo.gl/Wb3vP7)), we hadn't yet demonstrated how this
 potentially substantive food source might affect alligators in the field.
 
-![*Above:* Alligator tracks directly underneath one of our throughfall traps](/img/tracks_under_trap.jpeg)
+![*Above:* Alligator tracks directly underneath one of our throughfall traps](/img/tracks_under_trap.jpg)
 
 
 So to the field we went. We captured alligators in similar habitat with and without
@@ -86,6 +86,7 @@ ecologically important for many tropical and subtropical wetlands.
 ### Popular press:
 
 1. __Nell, LA__. Jun 2016. Nesting with alligators. *Natural History*, 12–15.
-   [[pdf](/pdfs/Nell_NH.pdf)]
+   [[pdf](/pdf/Nell_NH.pdf)]
 2. __Nell, LA__. May 2016. Unlikely companions. *Biosphere*, 56–61.
-   [[pdf](/pdfs/Nell_Biosphere.pdf)]
+   [[pdf](/pdf/Nell_Biosphere.pdf)]
+   
