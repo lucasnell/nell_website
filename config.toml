@@ -17,11 +17,6 @@ googleAnalytics = "UA-49535058-2"
 
 
 
-[[menu.main]]
-    name = "CV"
-    weight = 999
-    url = "/pdf/Nell_CV.pdf"
-
 
 [[headers]]
   for = "/*.woff"

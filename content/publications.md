@@ -8,8 +8,6 @@ url = "publications"
 <script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
 
 
-## Publications and popular press
-
 <div class="row auto" style="padding-top: 0.5em;">
 <div class="col-1"></div>
 <div class="col"><i>Links:</i></div>
