@@ -1,6 +1,5 @@
 ---
 title: "Mutualism in the Everglades"
-description: "Facilitation between nesting wading birds and alligators."
 date: 2017-05-09T17:00:28-05:00
 author: "Lucas A. Nell"
 weight: 20
