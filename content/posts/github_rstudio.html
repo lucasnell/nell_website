@@ -1,0 +1,178 @@
+---
+title: "Getting started with GitHub and RStudio"
+date: 2017-10-10T17:00:28-05:00
+author: "Lucas A. Nell"
+weight: 20
+slug: 'github-rstudio'
+output:
+  blogdown::html_page:
+    fig_width: 6
+    dev: "svg"
+    fig_caption: true
+---
+
+
+
+<p>This document is based on a presentation I did for the grad student organization for the Department of Integrative Biology, UW–Madison in Fall 2017.
+I’ve made a few changes to hopefully make it more transparent as a stand-alone document.</p>
+<div id="why-use-git-and-github" class="section level2">
+<h2>Why use git and GitHub?</h2>
+<div>
+<p><img src="http://phdcomics.com/comics/archive/phd101212s.gif" height="640" width="480"></p>
+</div>
+<ul>
+<li>To avoid the situation above!</li>
+<li>Collaborating with a team</li>
+<li>Sharing code with strangers</li>
+<li>Tracing and avoiding horrible mistakes</li>
+</ul>
+</div>
+<div id="git-and-github-overview" class="section level2">
+<h2>git and GitHub overview</h2>
+<p><img src="../github_overview.svg" /><!-- --></p>
+<ul>
+<li>The “working directory” is the folder containing the actual files you’re interacting
+with.</li>
+<li>After you save changes to the working directory that you want to keep, you must
+then add these changes to the “staging area” using <code>git add</code>.</li>
+<li>The staging area is where you temporarily store changes you might want to eventually
+add to your “local repository”. It’s very easy to remove these changes from
+the staging area before any future steps because they’re not yet in the repository.</li>
+<li>Once you’re satisfied with the changes that you’ve added to the staging area, you
+add this set of changes to the local repository by using <code>git commit</code>.</li>
+<li>The local repository stores the history of this directory as you’ve chronicled
+using git.</li>
+<li>Each commit can be thought of as a snapshot of the directory, where you control what’s
+being looked at.</li>
+<li>Your control comes in when you decide what changes to add to the staging area before
+committing. This can be really useful for keeping changes in the same commit if they
+are from the same section of a program or set of analyses.</li>
+<li>To update a “GitHub repository” based on some changes you’ve made and committed
+in your local repository, you push them to GitHub using <code>git push</code>.</li>
+<li>To update your local repository based on some changes someone else has made, committed,
+and pushed to the GitHub repository, you pull them to your local repository
+using <code>git pull</code>.</li>
+</ul>
+</div>
+<div id="prerequisites" class="section level2">
+<h2>Prerequisites</h2>
+<ul>
+<li><a href="https://git-scm.com/downloads">git</a></li>
+<li><a href="https://github.com">GitHub account</a></li>
+<li><a href="https://cloud.r-project.org/">R</a></li>
+<li><a href="https://www.rstudio.com/products/rstudio/download/">RStudio</a></li>
+</ul>
+</div>
+<div id="todays-goals" class="section level2">
+<h2>Today’s goals</h2>
+<ol style="list-style-type: decimal">
+<li>Tell git who you are</li>
+<li>Connect securely to GitHub</li>
+<li>Create a test repository</li>
+<li>Clone, commit, and push your repository</li>
+</ol>
+<div id="telling-git-who-you-are" class="section level3">
+<h3>1. Telling git who you are</h3>
+<p>In RStudio, <code>Tools</code> &gt; <code>Shell...</code></p>
+<p>Set global defaults for name and email.
+Make sure the email below is the one you use for your GitHub account</p>
+<pre class="bash"><code>git config --global user.name &#39;John Doe&#39;
+git config --global user.email &#39;john@doe.com&#39;</code></pre>
+<p><strong>Verifying that above worked by checking global git options:</strong></p>
+<p>Output from this command…</p>
+<pre class="bash"><code>git config --global --list</code></pre>
+<p>… should include this:</p>
+<pre class="bash"><code>user.name=John Doe
+user.email=john@doe.com</code></pre>
+</div>
+<div id="connecting-securely-to-github-using-ssh" class="section level3">
+<h3>2. Connecting securely to GitHub using SSH</h3>
+<p>First, check if you already have an SSH key</p>
+<p>From R:</p>
+<pre class="r"><code>file.exists(&quot;~/.ssh/id_rsa.pub&quot;)
+# Windows:
+# file.exists(&quot;C:/Users/USERNAME/.ssh/id_rsa&quot;)</code></pre>
+<p>If <code>FALSE</code>, you need to make a public key first…</p>
+<div id="making-and-viewing-key" class="section level4">
+<h4>2.1 Making and viewing key</h4>
+<p><img src="http://r-pkgs.had.co.nz/screenshots/git-config-2.png" height="500" width="500"></p>
+<p><small>(image from <code>http://r-pkgs.had.co.nz/git.html#git-setup</code>)</small></p>
+<ul>
+<li>Click “View public key” to see if you have one yet.</li>
+<li>If not, then generate one by clicking “Create RSA Key…” (you don’t generally need a
+passphrase).</li>
+<li>Click “View public key” and copy the key for the next step.</li>
+</ul>
+</div>
+<div id="adding-key-to-github" class="section level4">
+<h4>2.2 Adding key to GitHub</h4>
+<p>Login to <code>github.com</code> in web browser</p>
+<p>Go to <code>https://github.com/settings/ssh</code></p>
+<p><img src="https://github.com/lucasnell/github_gsis/raw/master/img/new_ssh.png" height="50" width="171"></p>
+<p>Enter a descriptive title (e.g., “Personal MacBook Pro”)</p>
+<p>Paste your key into the “Key” box</p>
+<p><img src="https://github.com/lucasnell/github_gsis/raw/master/img/add_ssh.png" height="50" width="163"></p>
+</div>
+</div>
+<div id="create-a-test-repository" class="section level3">
+<h3>3. Create a test repository</h3>
+<div id="initiate-new-repository" class="section level4">
+<h4>3.1 Initiate new repository</h4>
+<p>From <code>github.com</code>, hit “New repository”:</p>
+<p><img src="https://github.com/lucasnell/github_gsis/raw/master/img/new_repo.png" height="50" width="200" style="vertical-align: middle"></p>
+<p>From profile page, hit “New”:</p>
+<p><img src="https://github.com/lucasnell/github_gsis/raw/master/img/new_repo2.png" height="150" width="852"></p>
+</div>
+<div id="describe-and-create-new-repository" class="section level4">
+<h4>3.2 Describe and create new repository</h4>
+<p>If you want to actually use this repository for existing files, replace
+<code>awesome_name</code> with something useful.</p>
+<p><img src="https://github.com/lucasnell/github_gsis/raw/master/img/new_repo_info.png" height="502" width="776"></p>
+<p><span style="color: red;font-weight: bold;">*</span>
+If not using R, leave at “None” or change to language you’re using</p>
+</div>
+</div>
+<div id="clone-commit-and-push-your-repository" class="section level3">
+<h3>4. Clone, commit, and push your repository</h3>
+<div id="clone-repository-in-rstudio" class="section level4">
+<h4>4.1 Clone repository in RStudio</h4>
+<p><code>File</code> &gt; <code>New Project</code> &gt; <code>Version Control</code> &gt; <code>Git</code></p>
+<p><img src="https://github.com/lucasnell/github_gsis/raw/master/img/clone_repo.png" height="545" width="766"></p>
+<p>Replace <code>lucasnell</code> with your GitHub username, and <code>awesome_name</code> with your repository’s
+name.</p>
+</div>
+<div id="make-local-changes" class="section level4">
+<h4>4.2 Make local changes</h4>
+<p>If just using a test repo, edit the <code>README.md</code> file and save changes.</p>
+<p>If wanting to move a directory over to GitHub, copy those files into the
+new repository’s folder</p>
+</div>
+<div id="commit-and-push" class="section level4">
+<h4>4.3 Commit and Push</h4>
+<ol style="list-style-type: decimal">
+<li>In RStudio, under the “Git” tab, checked “Staged” for file(s) that you changed or
+added</li>
+<li>Hit “Commit”</li>
+<li>Add useful commit message</li>
+<li>Hit “Commit” again</li>
+<li>Hit “Push”</li>
+</ol>
+<p>If the above works, then you’re successfully using GitHub through RStudio</p>
+</div>
+</div>
+</div>
+<div id="additional-resources" class="section level2">
+<h2>Additional resources</h2>
+<ul>
+<li>Source of info for much of this presentation: <code>happygitwithr.com</code></li>
+<li>GitHub Education (for free private repos): <code>education.github.com</code></li>
+<li>Simple command line guide: <code>rogerdudler.github.io/git-guide</code></li>
+<li>Recommended git clients (RStudio isn’t great to use long-term)
+<ul>
+<li>GitKraken: <code>gitkraken.com</code></li>
+<li>SourceTree: <code>sourcetreeapp.com</code></li>
+</ul></li>
+<li>This presentation is available at <code>lucasnell.com/github_gsis</code></li>
+<li>My email: <code>lucas@lucasnell.com</code></li>
+</ul>
+</div>
