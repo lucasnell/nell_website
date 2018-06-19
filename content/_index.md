@@ -27,8 +27,8 @@ I'm a PhD student in the lab of [Dr. Anthony Ives](http://ives.labs.wisc.edu)
 in the [Department of Integrative Biology](http://ibio.wisc.edu/),
 [University of Wisconsin–Madison](http://www.wisc.edu/).
 
-I study the properties shaping species' evolution, particularly
-how evolution and ecology interact and
+My research aims to understand the properties shaping species' evolution.
+I am particularly interested in how evolution and ecology interact and
 how genomic processes affect evolutionary dynamics.
 
 
