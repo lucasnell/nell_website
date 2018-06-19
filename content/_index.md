@@ -13,18 +13,23 @@ processes interact. For my dissertation I am focusing on developing tools for si
 sequencing for populations with complex demographic histories and on the properties
 underlying clonal evolution in experimental populations of pea aphids.
 -->
-
-
-{{% person image="/img/portrait.jpg" %}}
-
-I'm a PhD student in the [Department of Integrative Biology](http://ibio.wisc.edu/) 
-at the [University of Wisconsin–Madison](http://www.wisc.edu/). My advisor is 
-[Dr. Anthony Ives](http://ives.labs.wisc.edu).
-
+<!---
 I am most fascinated by how complex networks of species interactions drive community
 structure and evolutionary outcomes—and how they themselves are shaped by natural
 selection. I seek to pursue these questions using a combination of computational,
 experimental, and comparative field approaches.
+-->
+
+
+{{% person image="/img/portrait.jpg" %}}
+
+I'm a PhD student in the lab of [Dr. Anthony Ives](http://ives.labs.wisc.edu)
+in the [Department of Integrative Biology](http://ibio.wisc.edu/),
+[University of Wisconsin–Madison](http://www.wisc.edu/).
+
+I study the properties shaping species' evolution, particularly
+how evolution and ecology interact and
+how genomic processes affect evolutionary dynamics.
 
 
 {{% /person %}}
