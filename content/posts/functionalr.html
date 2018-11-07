@@ -159,7 +159,7 @@ I’ve made a few changes to hopefully make it more transparent as a stand-alone
 ## data frame with 0 columns and 0 rows
 ## 
 ## [[3]]
-## [1] 0.09578932 0.22276156 0.07114280</code></pre>
+## [1] 0.6936828 0.6449001 0.5962980</code></pre>
 </div>
 <div id="the-apply-functions" class="section level2">
 <h2>The <code>apply</code> functions</h2>
@@ -306,15 +306,18 @@ I’ve made a few changes to hopefully make it more transparent as a stand-alone
 <a class="sourceLine" id="cb31-8" data-line-number="8">  <span class="co"># Combine each set to single RHS of formula:</span></a>
 <a class="sourceLine" id="cb31-9" data-line-number="9">  rhs &lt;-<span class="st"> </span><span class="kw">sapply</span>(names_, paste, <span class="dt">collapse =</span> <span class="st">&quot; + &quot;</span>)</a>
 <a class="sourceLine" id="cb31-10" data-line-number="10">  <span class="co"># Whole formulas as strings:</span></a>
-<a class="sourceLine" id="cb31-11" data-line-number="11">  forms &lt;-<span class="st"> </span><span class="kw">paste</span>(y, <span class="st">&quot;~&quot;</span>, rhs)</a>
-<a class="sourceLine" id="cb31-12" data-line-number="12">  <span class="kw">return</span>(forms)</a>
-<a class="sourceLine" id="cb31-13" data-line-number="13">}</a></code></pre></div>
+<a class="sourceLine" id="cb31-11" data-line-number="11">  form_strings &lt;-<span class="st"> </span><span class="kw">paste</span>(y, <span class="st">&quot;~&quot;</span>, rhs)</a>
+<a class="sourceLine" id="cb31-12" data-line-number="12">  <span class="co"># Convert to formulas:</span></a>
+<a class="sourceLine" id="cb31-13" data-line-number="13">  forms &lt;-<span class="st"> </span><span class="kw">sapply</span>(form_strings, as.formula,</a>
+<a class="sourceLine" id="cb31-14" data-line-number="14">                  <span class="dt">USE.NAMES =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb31-15" data-line-number="15">  <span class="kw">return</span>(forms)</a>
+<a class="sourceLine" id="cb31-16" data-line-number="16">}</a></code></pre></div>
 </div>
-<div id="fit-lm-based-on-a-single-formula-string" class="section level2">
-<h2>Fit <code>lm()</code> based on a single formula string:</h2>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1">single_mod &lt;-<span class="st"> </span><span class="cf">function</span>(form_str) {</a>
+<div id="fit-lm-based-on-a-single-formula" class="section level2">
+<h2>Fit <code>lm()</code> based on a single formula:</h2>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1">single_mod &lt;-<span class="st"> </span><span class="cf">function</span>(form) {</a>
 <a class="sourceLine" id="cb32-2" data-line-number="2">  <span class="co"># Fit lm:</span></a>
-<a class="sourceLine" id="cb32-3" data-line-number="3">  mod &lt;-<span class="st"> </span><span class="kw">lm</span>(<span class="kw">as.formula</span>(form_str), mtcars)</a>
+<a class="sourceLine" id="cb32-3" data-line-number="3">  mod &lt;-<span class="st"> </span><span class="kw">lm</span>(form, mtcars)</a>
 <a class="sourceLine" id="cb32-4" data-line-number="4">  <span class="co"># Make model print prettier:</span></a>
 <a class="sourceLine" id="cb32-5" data-line-number="5">  mod<span class="op">$</span>call<span class="op">$</span>formula &lt;-<span class="st"> </span><span class="kw">as.formula</span>(mod<span class="op">$</span>terms)</a>
 <a class="sourceLine" id="cb32-6" data-line-number="6">  <span class="kw">return</span>(mod)</a>

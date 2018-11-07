@@ -242,7 +242,7 @@ cat(files[1])
 
 1. Vector of file names (`file_names`)
 
-```{r weirddata_info}
+```{r weirddata_info, eval=FALSE}
 file_names <- c("file1.csv", "file2.csv")
 ```
 
@@ -350,7 +350,10 @@ make_forms <- function(y, Xs, n_Xs) {
   # Combine each set to single RHS of formula:
   rhs <- sapply(names_, paste, collapse = " + ")
   # Whole formulas as strings:
-  forms <- paste(y, "~", rhs)
+  form_strings <- paste(y, "~", rhs)
+  # Convert to formulas:
+  forms <- sapply(form_strings, as.formula,
+                  USE.NAMES = FALSE)
   return(forms)
 }
 ```
@@ -358,13 +361,13 @@ make_forms <- function(y, Xs, n_Xs) {
 
 
 
-Fit `lm()` based on a single formula string:
+Fit `lm()` based on a single formula:
 ----------------
 
 ```{r lotsa_models2}
-single_mod <- function(form_str) {
+single_mod <- function(form) {
   # Fit lm:
-  mod <- lm(as.formula(form_str), mtcars)
+  mod <- lm(form, mtcars)
   # Make model print prettier:
   mod$call$formula <- as.formula(mod$terms)
   return(mod)
