@@ -20,7 +20,7 @@ I've made a few changes to hopefully make it more transparent as a stand-alone d
 ## Why use git and GitHub?
 
 <div>
-<img src="http://phdcomics.com/comics/archive/phd101212s.gif" height="640" width="480">
+<img src="https://phdcomics.com/comics/archive/phd101212s.gif" height="640" width="480">
 </div>
 
 - To avoid the situation above!
@@ -33,8 +33,7 @@ I've made a few changes to hopefully make it more transparent as a stand-alone d
 
 
 ```{r github-overview-fig, fig.width = 4, echo = FALSE}
-path_ <- "../github_overview.svg"
-knitr::include_graphics(path_)
+knitr::include_graphics("./github_overview.svg")
 ```
 
 
@@ -126,9 +125,9 @@ If `FALSE`, you need to make a public key first...
 
 #### 2.1 Making and viewing key
 
-<img src="http://r-pkgs.had.co.nz/screenshots/git-config-2.png" height="500" width="500">
+<img src="https://d33wubrfki0l68.cloudfront.net/bd5a9c854106ef670a9c19afefd89f06cf841731/0549c/images/git-config-2.png" height="500" width="500">
 
-<small>(image from `http://r-pkgs.had.co.nz/git.html#git-setup`)</small>
+<small>(image from `https://r-pkgs.org/git.html#git-setup`)</small>
 
 * Click "View public key" to see if you have one yet.
 * If not, then generate one by clicking "Create RSA Key..." (you don't generally need a

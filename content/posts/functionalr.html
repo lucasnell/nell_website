@@ -12,9 +12,9 @@ output:
 ---
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; position: absolute; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 div.sourceCode { margin: 1em 0; }
@@ -24,16 +24,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; }
-pre.numberSource a.sourceLine:empty
-  { position: absolute; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all;
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -42,9 +42,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; } /* Alert */
 code span.an { color: #008000; } /* Annotation */
@@ -87,71 +87,71 @@ I’ve made a few changes to hopefully make it more transparent as a stand-alone
 <div id="consider-the-following-example" class="section level1">
 <h1>Consider the following example</h1>
 <p>Small errors are easy to make and can be annoying to find.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">lm_mpg &lt;-<span class="st"> </span><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span><span class="kw">factor</span>(cyll), mtcars)</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>lm_mpg &lt;-<span class="st"> </span><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span><span class="kw">factor</span>(cyll), mtcars)</span></code></pre></div>
 <pre><code>## Error in factor(cyll): object &#39;cyll&#39; not found</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">lm_hp &lt;-<span class="st"> </span><span class="kw">lm</span>(hp <span class="op">~</span><span class="st"> </span><span class="kw">factor</span>(cyl), mrcars)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>lm_hp &lt;-<span class="st"> </span><span class="kw">lm</span>(hp <span class="op">~</span><span class="st"> </span><span class="kw">factor</span>(cyl), mrcars)</span></code></pre></div>
 <pre><code>## Error in is.data.frame(data): object &#39;mrcars&#39; not found</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">lm_disp &lt;-<span class="st"> </span><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span><span class="kw">factor</span>(cyl), mtcars)</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>lm_disp &lt;-<span class="st"> </span><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span><span class="kw">factor</span>(cyl), mtcars)</span></code></pre></div>
 <p>The problem is even worse when you have lots of copying.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>drat, mtcars)</a>
-<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>wt, mtcars)</a>
-<a class="sourceLine" id="cb6-3" data-line-number="3"><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</a>
-<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</a>
-<a class="sourceLine" id="cb6-5" data-line-number="5"><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</a>
-<a class="sourceLine" id="cb6-6" data-line-number="6"><span class="kw">lm</span>(disp <span class="op">~</span><span class="st"> </span>mpg <span class="op">+</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>drat, mtcars)</a>
-<a class="sourceLine" id="cb6-7" data-line-number="7"><span class="kw">lm</span>(disp <span class="op">~</span><span class="st"> </span>mpg <span class="op">+</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>wt, mtcars)</a>
-<a class="sourceLine" id="cb6-8" data-line-number="8"><span class="kw">lm</span>(disp <span class="op">~</span><span class="st"> </span>mpg <span class="op">+</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</a>
-<a class="sourceLine" id="cb6-9" data-line-number="9"><span class="kw">lm</span>(disp <span class="op">~</span><span class="st"> </span>mpg <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</a>
-<a class="sourceLine" id="cb6-10" data-line-number="10"><span class="kw">lm</span>(disp <span class="op">~</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</a>
-<a class="sourceLine" id="cb6-11" data-line-number="11"><span class="kw">lm</span>(hp <span class="op">~</span><span class="st"> </span>mpg <span class="op">+</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>drat, mtcars)</a>
-<a class="sourceLine" id="cb6-12" data-line-number="12"><span class="kw">lm</span>(hp <span class="op">~</span><span class="st"> </span>mpg <span class="op">+</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>wt, mtcars)</a>
-<a class="sourceLine" id="cb6-13" data-line-number="13"><span class="kw">lm</span>(hp <span class="op">~</span><span class="st"> </span>mpg <span class="op">+</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</a>
-<a class="sourceLine" id="cb6-14" data-line-number="14"><span class="kw">lm</span>(hp <span class="op">~</span><span class="st"> </span>mpg <span class="op">+</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</a>
-<a class="sourceLine" id="cb6-15" data-line-number="15"><span class="kw">lm</span>(hp <span class="op">~</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>drat, mtcars)</span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>wt, mtcars)</span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="kw">lm</span>(disp <span class="op">~</span><span class="st"> </span>mpg <span class="op">+</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>drat, mtcars)</span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="kw">lm</span>(disp <span class="op">~</span><span class="st"> </span>mpg <span class="op">+</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>wt, mtcars)</span>
+<span id="cb6-8"><a href="#cb6-8"></a><span class="kw">lm</span>(disp <span class="op">~</span><span class="st"> </span>mpg <span class="op">+</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</span>
+<span id="cb6-9"><a href="#cb6-9"></a><span class="kw">lm</span>(disp <span class="op">~</span><span class="st"> </span>mpg <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</span>
+<span id="cb6-10"><a href="#cb6-10"></a><span class="kw">lm</span>(disp <span class="op">~</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</span>
+<span id="cb6-11"><a href="#cb6-11"></a><span class="kw">lm</span>(hp <span class="op">~</span><span class="st"> </span>mpg <span class="op">+</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>drat, mtcars)</span>
+<span id="cb6-12"><a href="#cb6-12"></a><span class="kw">lm</span>(hp <span class="op">~</span><span class="st"> </span>mpg <span class="op">+</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>wt, mtcars)</span>
+<span id="cb6-13"><a href="#cb6-13"></a><span class="kw">lm</span>(hp <span class="op">~</span><span class="st"> </span>mpg <span class="op">+</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</span>
+<span id="cb6-14"><a href="#cb6-14"></a><span class="kw">lm</span>(hp <span class="op">~</span><span class="st"> </span>mpg <span class="op">+</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</span>
+<span id="cb6-15"><a href="#cb6-15"></a><span class="kw">lm</span>(hp <span class="op">~</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</span></code></pre></div>
 <div id="which-is-better" class="section level3">
 <h3>Which is better?</h3>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">lm_mpg &lt;-<span class="st"> </span><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span><span class="kw">factor</span>(cyl), mtcars)</a>
-<a class="sourceLine" id="cb7-2" data-line-number="2">lm_disp &lt;-<span class="st"> </span><span class="kw">lm</span>(disp <span class="op">~</span><span class="st"> </span><span class="kw">factor</span>(cyl), mtcars)</a>
-<a class="sourceLine" id="cb7-3" data-line-number="3">lm_hp &lt;-<span class="st"> </span><span class="kw">lm</span>(hp <span class="op">~</span><span class="st"> </span><span class="kw">factor</span>(cyl), mtcars)</a>
-<a class="sourceLine" id="cb7-4" data-line-number="4">lm_drat &lt;-<span class="st"> </span><span class="kw">lm</span>(drat <span class="op">~</span><span class="st"> </span><span class="kw">factor</span>(cyl), mtcars)</a>
-<a class="sourceLine" id="cb7-5" data-line-number="5">lm_wt &lt;-<span class="st"> </span><span class="kw">lm</span>(wt <span class="op">~</span><span class="st"> </span><span class="kw">factor</span>(cyl), mtcars)</a>
-<a class="sourceLine" id="cb7-6" data-line-number="6">lm_qsec &lt;-<span class="st"> </span><span class="kw">lm</span>(qsec <span class="op">~</span><span class="st"> </span><span class="kw">factor</span>(cyl), mtcars)</a>
-<a class="sourceLine" id="cb7-7" data-line-number="7">lm_vs &lt;-<span class="st"> </span><span class="kw">lm</span>(vs <span class="op">~</span><span class="st"> </span><span class="kw">factor</span>(cyl), mtcars)</a>
-<a class="sourceLine" id="cb7-8" data-line-number="8">lm_am &lt;-<span class="st"> </span><span class="kw">lm</span>(am <span class="op">~</span><span class="st"> </span><span class="kw">factor</span>(cyl), mtcars)</a>
-<a class="sourceLine" id="cb7-9" data-line-number="9">lm_gear &lt;-<span class="st"> </span><span class="kw">lm</span>(gear <span class="op">~</span><span class="st"> </span><span class="kw">factor</span>(cyl), mtcars)</a>
-<a class="sourceLine" id="cb7-10" data-line-number="10">lm_carb &lt;-<span class="st"> </span><span class="kw">lm</span>(carb <span class="op">~</span><span class="st"> </span><span class="kw">factor</span>(cyl), mtcars)</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>lm_mpg &lt;-<span class="st"> </span><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span><span class="kw">factor</span>(cyl), mtcars)</span>
+<span id="cb7-2"><a href="#cb7-2"></a>lm_disp &lt;-<span class="st"> </span><span class="kw">lm</span>(disp <span class="op">~</span><span class="st"> </span><span class="kw">factor</span>(cyl), mtcars)</span>
+<span id="cb7-3"><a href="#cb7-3"></a>lm_hp &lt;-<span class="st"> </span><span class="kw">lm</span>(hp <span class="op">~</span><span class="st"> </span><span class="kw">factor</span>(cyl), mtcars)</span>
+<span id="cb7-4"><a href="#cb7-4"></a>lm_drat &lt;-<span class="st"> </span><span class="kw">lm</span>(drat <span class="op">~</span><span class="st"> </span><span class="kw">factor</span>(cyl), mtcars)</span>
+<span id="cb7-5"><a href="#cb7-5"></a>lm_wt &lt;-<span class="st"> </span><span class="kw">lm</span>(wt <span class="op">~</span><span class="st"> </span><span class="kw">factor</span>(cyl), mtcars)</span>
+<span id="cb7-6"><a href="#cb7-6"></a>lm_qsec &lt;-<span class="st"> </span><span class="kw">lm</span>(qsec <span class="op">~</span><span class="st"> </span><span class="kw">factor</span>(cyl), mtcars)</span>
+<span id="cb7-7"><a href="#cb7-7"></a>lm_vs &lt;-<span class="st"> </span><span class="kw">lm</span>(vs <span class="op">~</span><span class="st"> </span><span class="kw">factor</span>(cyl), mtcars)</span>
+<span id="cb7-8"><a href="#cb7-8"></a>lm_am &lt;-<span class="st"> </span><span class="kw">lm</span>(am <span class="op">~</span><span class="st"> </span><span class="kw">factor</span>(cyl), mtcars)</span>
+<span id="cb7-9"><a href="#cb7-9"></a>lm_gear &lt;-<span class="st"> </span><span class="kw">lm</span>(gear <span class="op">~</span><span class="st"> </span><span class="kw">factor</span>(cyl), mtcars)</span>
+<span id="cb7-10"><a href="#cb7-10"></a>lm_carb &lt;-<span class="st"> </span><span class="kw">lm</span>(carb <span class="op">~</span><span class="st"> </span><span class="kw">factor</span>(cyl), mtcars)</span></code></pre></div>
 <p>or</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">y_pars &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;mpg&quot;</span>, <span class="st">&quot;disp&quot;</span>, <span class="st">&quot;hp&quot;</span>, <span class="st">&quot;drat&quot;</span>,</a>
-<a class="sourceLine" id="cb8-2" data-line-number="2">            <span class="st">&quot;wt&quot;</span>, <span class="st">&quot;qsec&quot;</span>, <span class="st">&quot;vs&quot;</span>, <span class="st">&quot;am&quot;</span>,</a>
-<a class="sourceLine" id="cb8-3" data-line-number="3">            <span class="st">&quot;gear&quot;</span>, <span class="st">&quot;carb&quot;</span>)</a>
-<a class="sourceLine" id="cb8-4" data-line-number="4">all_lm &lt;-<span class="st"> </span><span class="kw">lapply</span>(y_pars, cyl_model)</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>y_pars &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;mpg&quot;</span>, <span class="st">&quot;disp&quot;</span>, <span class="st">&quot;hp&quot;</span>, <span class="st">&quot;drat&quot;</span>,</span>
+<span id="cb8-2"><a href="#cb8-2"></a>            <span class="st">&quot;wt&quot;</span>, <span class="st">&quot;qsec&quot;</span>, <span class="st">&quot;vs&quot;</span>, <span class="st">&quot;am&quot;</span>,</span>
+<span id="cb8-3"><a href="#cb8-3"></a>            <span class="st">&quot;gear&quot;</span>, <span class="st">&quot;carb&quot;</span>)</span>
+<span id="cb8-4"><a href="#cb8-4"></a>all_lm &lt;-<span class="st"> </span><span class="kw">lapply</span>(y_pars, cyl_model)</span></code></pre></div>
 </div>
 </div>
 <div id="some-r-basics" class="section level1">
 <h1>Some R basics</h1>
 <div id="basics-of-functions-in-r" class="section level2">
 <h2>Basics of functions in R</h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">subtract &lt;-<span class="st"> </span><span class="cf">function</span>(x, <span class="dt">y =</span> <span class="dv">1</span>) {</a>
-<a class="sourceLine" id="cb9-2" data-line-number="2">  z &lt;-<span class="st"> </span>x <span class="op">-</span><span class="st"> </span>y</a>
-<a class="sourceLine" id="cb9-3" data-line-number="3">  <span class="kw">return</span>(z)</a>
-<a class="sourceLine" id="cb9-4" data-line-number="4">}</a>
-<a class="sourceLine" id="cb9-5" data-line-number="5"><span class="kw">subtract</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dv">4</span><span class="op">:</span><span class="dv">6</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>subtract &lt;-<span class="st"> </span><span class="cf">function</span>(x, <span class="dt">y =</span> <span class="dv">1</span>) {</span>
+<span id="cb9-2"><a href="#cb9-2"></a>  z &lt;-<span class="st"> </span>x <span class="op">-</span><span class="st"> </span>y</span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="kw">return</span>(z)</span>
+<span id="cb9-4"><a href="#cb9-4"></a>}</span>
+<span id="cb9-5"><a href="#cb9-5"></a><span class="kw">subtract</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dv">4</span><span class="op">:</span><span class="dv">6</span>)</span></code></pre></div>
 <pre><code>## [1] -3 -3 -3</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw">subtract</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">subtract</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 0 1 2</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="kw">subtract</span>(<span class="dt">y =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">x =</span> <span class="dv">4</span><span class="op">:</span><span class="dv">6</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="kw">subtract</span>(<span class="dt">y =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>, <span class="dt">x =</span> <span class="dv">4</span><span class="op">:</span><span class="dv">6</span>)</span></code></pre></div>
 <pre><code>## [1] 3 3 3</code></pre>
 </div>
 <div id="flexibility-of-lists" class="section level2">
 <h2>Flexibility of lists</h2>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">numeric</span>(<span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb15-2" data-line-number="2">x[[<span class="dv">1</span>]] &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>x &lt;-<span class="st"> </span><span class="kw">numeric</span>(<span class="dv">2</span>)</span>
+<span id="cb15-2"><a href="#cb15-2"></a>x[[<span class="dv">1</span>]] &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span></code></pre></div>
 <pre><code>## Error in x[[1]] &lt;- matrix(0, 0, 0): replacement has length zero</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">as.list</span>(<span class="kw">numeric</span>(<span class="dv">3</span>))</a>
-<a class="sourceLine" id="cb17-2" data-line-number="2">x[[<span class="dv">1</span>]] &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)</a>
-<a class="sourceLine" id="cb17-3" data-line-number="3">x[[<span class="dv">2</span>]] &lt;-<span class="st"> </span><span class="kw">data.frame</span>()</a>
-<a class="sourceLine" id="cb17-4" data-line-number="4">x[[<span class="dv">3</span>]] &lt;-<span class="st"> </span><span class="kw">runif</span>(<span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb17-5" data-line-number="5">x</a></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>x &lt;-<span class="st"> </span><span class="kw">as.list</span>(<span class="kw">numeric</span>(<span class="dv">3</span>))</span>
+<span id="cb17-2"><a href="#cb17-2"></a>x[[<span class="dv">1</span>]] &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb17-3"><a href="#cb17-3"></a>x[[<span class="dv">2</span>]] &lt;-<span class="st"> </span><span class="kw">data.frame</span>()</span>
+<span id="cb17-4"><a href="#cb17-4"></a>x[[<span class="dv">3</span>]] &lt;-<span class="st"> </span><span class="kw">runif</span>(<span class="dv">3</span>)</span>
+<span id="cb17-5"><a href="#cb17-5"></a>x</span></code></pre></div>
 <pre><code>## [[1]]
 ## &lt;0 x 0 matrix&gt;
 ## 
@@ -159,7 +159,7 @@ I’ve made a few changes to hopefully make it more transparent as a stand-alone
 ## data frame with 0 columns and 0 rows
 ## 
 ## [[3]]
-## [1] 0.6936828 0.6449001 0.5962980</code></pre>
+## [1] 0.97097090 0.02626095 0.21976986</code></pre>
 </div>
 <div id="the-apply-functions" class="section level2">
 <h2>The <code>apply</code> functions</h2>
@@ -167,13 +167,13 @@ I’ve made a few changes to hopefully make it more transparent as a stand-alone
 <li>Allows you to apply a function to multiple inputs.</li>
 <li><code>lapply</code> outputs a list, <code>sapply</code> coerces to an array.</li>
 </ul>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb19-1" data-line-number="1"><span class="kw">lapply</span>(<span class="dv">4</span><span class="op">:</span><span class="dv">5</span>, <span class="cf">function</span>(i) <span class="dv">1</span> <span class="op">+</span><span class="st"> </span>i)</a></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="kw">lapply</span>(<span class="dv">4</span><span class="op">:</span><span class="dv">5</span>, <span class="cf">function</span>(i) <span class="dv">1</span> <span class="op">+</span><span class="st"> </span>i)</span></code></pre></div>
 <pre><code>## [[1]]
 ## [1] 5
 ## 
 ## [[2]]
 ## [1] 6</code></pre>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" data-line-number="1"><span class="kw">sapply</span>(<span class="dv">4</span><span class="op">:</span><span class="dv">5</span>, <span class="cf">function</span>(i) <span class="dv">1</span> <span class="op">+</span><span class="st"> </span>i)</a></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="kw">sapply</span>(<span class="dv">4</span><span class="op">:</span><span class="dv">5</span>, <span class="cf">function</span>(i) <span class="dv">1</span> <span class="op">+</span><span class="st"> </span>i)</span></code></pre></div>
 <pre><code>## [1] 5 6</code></pre>
 </div>
 <div id="for-loops" class="section level2">
@@ -182,12 +182,12 @@ I’ve made a few changes to hopefully make it more transparent as a stand-alone
 <li>Especially useful when one iteration’s result depends on the previous iteration.</li>
 <li>Changes existing object(s).</li>
 </ul>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">numeric</span>(<span class="dv">100</span>)</a>
-<a class="sourceLine" id="cb23-2" data-line-number="2">x[<span class="dv">1</span>] &lt;-<span class="st"> </span><span class="dv">10</span></a>
-<a class="sourceLine" id="cb23-3" data-line-number="3"><span class="cf">for</span> (t <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span><span class="kw">length</span>(x)) {</a>
-<a class="sourceLine" id="cb23-4" data-line-number="4">  x[t] &lt;-<span class="st"> </span>x[t<span class="dv">-1</span>] <span class="op">+</span><span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">1</span>)</a>
-<a class="sourceLine" id="cb23-5" data-line-number="5">}</a>
-<a class="sourceLine" id="cb23-6" data-line-number="6"><span class="kw">plot</span>(x, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>x &lt;-<span class="st"> </span><span class="kw">numeric</span>(<span class="dv">100</span>)</span>
+<span id="cb23-2"><a href="#cb23-2"></a>x[<span class="dv">1</span>] &lt;-<span class="st"> </span><span class="dv">10</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a><span class="cf">for</span> (t <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span><span class="kw">length</span>(x)) {</span>
+<span id="cb23-4"><a href="#cb23-4"></a>  x[t] &lt;-<span class="st"> </span>x[t<span class="dv">-1</span>] <span class="op">+</span><span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">1</span>)</span>
+<span id="cb23-5"><a href="#cb23-5"></a>}</span>
+<span id="cb23-6"><a href="#cb23-6"></a><span class="kw">plot</span>(x, <span class="dt">type =</span> <span class="st">&quot;l&quot;</span>, <span class="dt">lwd =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p><img src="/posts/functionalr_files/figure-html/for_loops2-1.svg" width="768" /></p>
 </div>
 </div>
@@ -228,27 +228,27 @@ I’ve made a few changes to hopefully make it more transparent as a stand-alone
 <ol style="list-style-type: decimal">
 <li>Vector of file names (<code>file_names</code>)</li>
 </ol>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" data-line-number="1">file_names &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;file1.csv&quot;</span>, <span class="st">&quot;file2.csv&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>file_names &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;file1.csv&quot;</span>, <span class="st">&quot;file2.csv&quot;</span>)</span></code></pre></div>
 </div>
 <div id="clean-a-single-csv-file-to-a-string" class="section level2">
 <h2>Clean a single CSV file to a string</h2>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" data-line-number="1">clean_str &lt;-<span class="st"> </span><span class="cf">function</span>(file_name) {</a>
-<a class="sourceLine" id="cb26-2" data-line-number="2">  lines &lt;-<span class="st"> </span><span class="kw">readLines</span>(file_name)</a>
-<a class="sourceLine" id="cb26-3" data-line-number="3">  lines &lt;-<span class="st"> </span>lines[<span class="op">!</span><span class="kw">grepl</span>(<span class="st">&quot;^</span><span class="ch">\\</span><span class="st">#</span><span class="ch">\\</span><span class="st">#|^--&quot;</span>, lines) <span class="op">&amp;</span></a>
-<a class="sourceLine" id="cb26-4" data-line-number="4"><span class="st">                   </span>lines <span class="op">!=</span><span class="st"> &quot;&quot;</span>]</a>
-<a class="sourceLine" id="cb26-5" data-line-number="5">  cleaned_str &lt;-<span class="st"> </span><span class="kw">paste</span>(lines, <span class="dt">collapse =</span> <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</a>
-<a class="sourceLine" id="cb26-6" data-line-number="6">  <span class="kw">return</span>(cleaned_str)</a>
-<a class="sourceLine" id="cb26-7" data-line-number="7">}</a></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>clean_str &lt;-<span class="st"> </span><span class="cf">function</span>(file_name) {</span>
+<span id="cb26-2"><a href="#cb26-2"></a>  lines &lt;-<span class="st"> </span><span class="kw">readLines</span>(file_name)</span>
+<span id="cb26-3"><a href="#cb26-3"></a>  lines &lt;-<span class="st"> </span>lines[<span class="op">!</span><span class="kw">grepl</span>(<span class="st">&quot;^</span><span class="ch">\\</span><span class="st">#</span><span class="ch">\\</span><span class="st">#|^--&quot;</span>, lines) <span class="op">&amp;</span></span>
+<span id="cb26-4"><a href="#cb26-4"></a><span class="st">                   </span>lines <span class="op">!=</span><span class="st"> &quot;&quot;</span>]</span>
+<span id="cb26-5"><a href="#cb26-5"></a>  cleaned_str &lt;-<span class="st"> </span><span class="kw">paste</span>(lines, <span class="dt">collapse =</span> <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb26-6"><a href="#cb26-6"></a>  <span class="kw">return</span>(cleaned_str)</span>
+<span id="cb26-7"><a href="#cb26-7"></a>}</span></code></pre></div>
 </div>
 <div id="clean-multiple-files-then-combine-them-into-a-single-data-frame" class="section level2">
 <h2>Clean multiple files then combine them into a single data frame:</h2>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb27-1" data-line-number="1">clean_df &lt;-<span class="st"> </span><span class="cf">function</span>(file_names) {</a>
-<a class="sourceLine" id="cb27-2" data-line-number="2">  cleaned_strs &lt;-<span class="st"> </span><span class="kw">lapply</span>(file_names, clean_str)</a>
-<a class="sourceLine" id="cb27-3" data-line-number="3">  data_frames &lt;-<span class="st"> </span><span class="kw">lapply</span>(cleaned_strs, readr<span class="op">::</span>read_csv)</a>
-<a class="sourceLine" id="cb27-4" data-line-number="4">  combined_df &lt;-<span class="st"> </span>dplyr<span class="op">::</span><span class="kw">bind_rows</span>(data_frames)</a>
-<a class="sourceLine" id="cb27-5" data-line-number="5">  <span class="kw">return</span>(<span class="kw">as.data.frame</span>(combined_df))</a>
-<a class="sourceLine" id="cb27-6" data-line-number="6">}</a>
-<a class="sourceLine" id="cb27-7" data-line-number="7"><span class="kw">head</span>(<span class="kw">clean_df</span>(file_names))</a></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>clean_df &lt;-<span class="st"> </span><span class="cf">function</span>(file_names) {</span>
+<span id="cb27-2"><a href="#cb27-2"></a>  cleaned_strs &lt;-<span class="st"> </span><span class="kw">lapply</span>(file_names, clean_str)</span>
+<span id="cb27-3"><a href="#cb27-3"></a>  data_frames &lt;-<span class="st"> </span><span class="kw">lapply</span>(cleaned_strs, readr<span class="op">::</span>read_csv)</span>
+<span id="cb27-4"><a href="#cb27-4"></a>  combined_df &lt;-<span class="st"> </span>dplyr<span class="op">::</span><span class="kw">bind_rows</span>(data_frames)</span>
+<span id="cb27-5"><a href="#cb27-5"></a>  <span class="kw">return</span>(<span class="kw">as.data.frame</span>(combined_df))</span>
+<span id="cb27-6"><a href="#cb27-6"></a>}</span>
+<span id="cb27-7"><a href="#cb27-7"></a><span class="kw">head</span>(<span class="kw">clean_df</span>(file_names))</span></code></pre></div>
 <pre><code>##   Ozone Solar.R Wind Temp Month Day
 ## 1    41     190  7.4   67     5   1
 ## 2    NA      NA 14.3   56     5   5
@@ -261,21 +261,21 @@ I’ve made a few changes to hopefully make it more transparent as a stand-alone
 <div id="example-2-fitting-lots-of-models" class="section level1">
 <h1>Example #2: Fitting lots of models</h1>
 <p>How can we simplify this?</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb29-1" data-line-number="1"><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>drat, mtcars)</a>
-<a class="sourceLine" id="cb29-2" data-line-number="2"><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>wt, mtcars)</a>
-<a class="sourceLine" id="cb29-3" data-line-number="3"><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</a>
-<a class="sourceLine" id="cb29-4" data-line-number="4"><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</a>
-<a class="sourceLine" id="cb29-5" data-line-number="5"><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</a>
-<a class="sourceLine" id="cb29-6" data-line-number="6"><span class="kw">lm</span>(disp <span class="op">~</span><span class="st"> </span>mpg <span class="op">+</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>drat, mtcars)</a>
-<a class="sourceLine" id="cb29-7" data-line-number="7"><span class="kw">lm</span>(disp <span class="op">~</span><span class="st"> </span>mpg <span class="op">+</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>wt, mtcars)</a>
-<a class="sourceLine" id="cb29-8" data-line-number="8"><span class="kw">lm</span>(disp <span class="op">~</span><span class="st"> </span>mpg <span class="op">+</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</a>
-<a class="sourceLine" id="cb29-9" data-line-number="9"><span class="kw">lm</span>(disp <span class="op">~</span><span class="st"> </span>mpg <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</a>
-<a class="sourceLine" id="cb29-10" data-line-number="10"><span class="kw">lm</span>(disp <span class="op">~</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</a>
-<a class="sourceLine" id="cb29-11" data-line-number="11"><span class="kw">lm</span>(hp <span class="op">~</span><span class="st"> </span>mpg <span class="op">+</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>drat, mtcars)</a>
-<a class="sourceLine" id="cb29-12" data-line-number="12"><span class="kw">lm</span>(hp <span class="op">~</span><span class="st"> </span>mpg <span class="op">+</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>wt, mtcars)</a>
-<a class="sourceLine" id="cb29-13" data-line-number="13"><span class="kw">lm</span>(hp <span class="op">~</span><span class="st"> </span>mpg <span class="op">+</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</a>
-<a class="sourceLine" id="cb29-14" data-line-number="14"><span class="kw">lm</span>(hp <span class="op">~</span><span class="st"> </span>mpg <span class="op">+</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</a>
-<a class="sourceLine" id="cb29-15" data-line-number="15"><span class="kw">lm</span>(hp <span class="op">~</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</a></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>drat, mtcars)</span>
+<span id="cb29-2"><a href="#cb29-2"></a><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>wt, mtcars)</span>
+<span id="cb29-3"><a href="#cb29-3"></a><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</span>
+<span id="cb29-4"><a href="#cb29-4"></a><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</span>
+<span id="cb29-5"><a href="#cb29-5"></a><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</span>
+<span id="cb29-6"><a href="#cb29-6"></a><span class="kw">lm</span>(disp <span class="op">~</span><span class="st"> </span>mpg <span class="op">+</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>drat, mtcars)</span>
+<span id="cb29-7"><a href="#cb29-7"></a><span class="kw">lm</span>(disp <span class="op">~</span><span class="st"> </span>mpg <span class="op">+</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>wt, mtcars)</span>
+<span id="cb29-8"><a href="#cb29-8"></a><span class="kw">lm</span>(disp <span class="op">~</span><span class="st"> </span>mpg <span class="op">+</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</span>
+<span id="cb29-9"><a href="#cb29-9"></a><span class="kw">lm</span>(disp <span class="op">~</span><span class="st"> </span>mpg <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</span>
+<span id="cb29-10"><a href="#cb29-10"></a><span class="kw">lm</span>(disp <span class="op">~</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>hp <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</span>
+<span id="cb29-11"><a href="#cb29-11"></a><span class="kw">lm</span>(hp <span class="op">~</span><span class="st"> </span>mpg <span class="op">+</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>drat, mtcars)</span>
+<span id="cb29-12"><a href="#cb29-12"></a><span class="kw">lm</span>(hp <span class="op">~</span><span class="st"> </span>mpg <span class="op">+</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>wt, mtcars)</span>
+<span id="cb29-13"><a href="#cb29-13"></a><span class="kw">lm</span>(hp <span class="op">~</span><span class="st"> </span>mpg <span class="op">+</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</span>
+<span id="cb29-14"><a href="#cb29-14"></a><span class="kw">lm</span>(hp <span class="op">~</span><span class="st"> </span>mpg <span class="op">+</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</span>
+<span id="cb29-15"><a href="#cb29-15"></a><span class="kw">lm</span>(hp <span class="op">~</span><span class="st"> </span>cyl <span class="op">+</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>drat <span class="op">+</span><span class="st"> </span>wt, mtcars)</span></code></pre></div>
 <div id="problems-1" class="section level3">
 <h3>Problems:</h3>
 <ol style="list-style-type: decimal">
@@ -290,50 +290,50 @@ I’ve made a few changes to hopefully make it more transparent as a stand-alone
 <li>Vector of possible X variables (<code>Xs</code>)</li>
 <li>Number of X variables to include in each model (<code>n_Xs</code>)</li>
 </ol>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" data-line-number="1">Ys &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;mpg&quot;</span>, <span class="st">&quot;disp&quot;</span>, <span class="st">&quot;hp&quot;</span>)</a>
-<a class="sourceLine" id="cb30-2" data-line-number="2">Xs &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;mpg&quot;</span>, <span class="st">&quot;cyl&quot;</span>, <span class="st">&quot;disp&quot;</span>, <span class="st">&quot;hp&quot;</span>, <span class="st">&quot;drat&quot;</span>, <span class="st">&quot;wt&quot;</span>)</a>
-<a class="sourceLine" id="cb30-3" data-line-number="3">n_Xs &lt;-<span class="st"> </span><span class="dv">4</span></a></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>Ys &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;mpg&quot;</span>, <span class="st">&quot;disp&quot;</span>, <span class="st">&quot;hp&quot;</span>)</span>
+<span id="cb30-2"><a href="#cb30-2"></a>Xs &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;mpg&quot;</span>, <span class="st">&quot;cyl&quot;</span>, <span class="st">&quot;disp&quot;</span>, <span class="st">&quot;hp&quot;</span>, <span class="st">&quot;drat&quot;</span>, <span class="st">&quot;wt&quot;</span>)</span>
+<span id="cb30-3"><a href="#cb30-3"></a>n_Xs &lt;-<span class="st"> </span><span class="dv">4</span></span></code></pre></div>
 </div>
 <div id="make-vector-of-all-necessary-formulas" class="section level2">
 <h2>Make vector of all necessary formulas:</h2>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb31-1" data-line-number="1">make_forms &lt;-<span class="st"> </span><span class="cf">function</span>(y, Xs, n_Xs) {</a>
-<a class="sourceLine" id="cb31-2" data-line-number="2">  poss_Xs &lt;-<span class="st"> </span>Xs[Xs <span class="op">!=</span><span class="st"> </span>y]</a>
-<a class="sourceLine" id="cb31-3" data-line-number="3">  n_poss_Xs &lt;-<span class="st"> </span><span class="kw">length</span>(poss_Xs)</a>
-<a class="sourceLine" id="cb31-4" data-line-number="4">  <span class="co"># All possible combinations:</span></a>
-<a class="sourceLine" id="cb31-5" data-line-number="5">  combs &lt;-<span class="st"> </span><span class="kw">combn</span>(n_poss_Xs, n_Xs, <span class="dt">simplify =</span> <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb31-6" data-line-number="6">  <span class="co"># Change to names:</span></a>
-<a class="sourceLine" id="cb31-7" data-line-number="7">  names_ &lt;-<span class="st"> </span><span class="kw">lapply</span>(combs, <span class="cf">function</span>(x) poss_Xs[x])</a>
-<a class="sourceLine" id="cb31-8" data-line-number="8">  <span class="co"># Combine each set to single RHS of formula:</span></a>
-<a class="sourceLine" id="cb31-9" data-line-number="9">  rhs &lt;-<span class="st"> </span><span class="kw">sapply</span>(names_, paste, <span class="dt">collapse =</span> <span class="st">&quot; + &quot;</span>)</a>
-<a class="sourceLine" id="cb31-10" data-line-number="10">  <span class="co"># Whole formulas as strings:</span></a>
-<a class="sourceLine" id="cb31-11" data-line-number="11">  form_strings &lt;-<span class="st"> </span><span class="kw">paste</span>(y, <span class="st">&quot;~&quot;</span>, rhs)</a>
-<a class="sourceLine" id="cb31-12" data-line-number="12">  <span class="co"># Convert to formulas:</span></a>
-<a class="sourceLine" id="cb31-13" data-line-number="13">  forms &lt;-<span class="st"> </span><span class="kw">sapply</span>(form_strings, as.formula,</a>
-<a class="sourceLine" id="cb31-14" data-line-number="14">                  <span class="dt">USE.NAMES =</span> <span class="ot">FALSE</span>)</a>
-<a class="sourceLine" id="cb31-15" data-line-number="15">  <span class="kw">return</span>(forms)</a>
-<a class="sourceLine" id="cb31-16" data-line-number="16">}</a></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>make_forms &lt;-<span class="st"> </span><span class="cf">function</span>(y, Xs, n_Xs) {</span>
+<span id="cb31-2"><a href="#cb31-2"></a>  poss_Xs &lt;-<span class="st"> </span>Xs[Xs <span class="op">!=</span><span class="st"> </span>y]</span>
+<span id="cb31-3"><a href="#cb31-3"></a>  n_poss_Xs &lt;-<span class="st"> </span><span class="kw">length</span>(poss_Xs)</span>
+<span id="cb31-4"><a href="#cb31-4"></a>  <span class="co"># All possible combinations:</span></span>
+<span id="cb31-5"><a href="#cb31-5"></a>  combs &lt;-<span class="st"> </span><span class="kw">combn</span>(n_poss_Xs, n_Xs, <span class="dt">simplify =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb31-6"><a href="#cb31-6"></a>  <span class="co"># Change to names:</span></span>
+<span id="cb31-7"><a href="#cb31-7"></a>  names_ &lt;-<span class="st"> </span><span class="kw">lapply</span>(combs, <span class="cf">function</span>(x) poss_Xs[x])</span>
+<span id="cb31-8"><a href="#cb31-8"></a>  <span class="co"># Combine each set to single RHS of formula:</span></span>
+<span id="cb31-9"><a href="#cb31-9"></a>  rhs &lt;-<span class="st"> </span><span class="kw">sapply</span>(names_, paste, <span class="dt">collapse =</span> <span class="st">&quot; + &quot;</span>)</span>
+<span id="cb31-10"><a href="#cb31-10"></a>  <span class="co"># Whole formulas as strings:</span></span>
+<span id="cb31-11"><a href="#cb31-11"></a>  form_strings &lt;-<span class="st"> </span><span class="kw">paste</span>(y, <span class="st">&quot;~&quot;</span>, rhs)</span>
+<span id="cb31-12"><a href="#cb31-12"></a>  <span class="co"># Convert to formulas:</span></span>
+<span id="cb31-13"><a href="#cb31-13"></a>  forms &lt;-<span class="st"> </span><span class="kw">sapply</span>(form_strings, as.formula,</span>
+<span id="cb31-14"><a href="#cb31-14"></a>                  <span class="dt">USE.NAMES =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb31-15"><a href="#cb31-15"></a>  <span class="kw">return</span>(forms)</span>
+<span id="cb31-16"><a href="#cb31-16"></a>}</span></code></pre></div>
 </div>
 <div id="fit-lm-based-on-a-single-formula" class="section level2">
 <h2>Fit <code>lm()</code> based on a single formula:</h2>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" data-line-number="1">single_mod &lt;-<span class="st"> </span><span class="cf">function</span>(form) {</a>
-<a class="sourceLine" id="cb32-2" data-line-number="2">  <span class="co"># Fit lm:</span></a>
-<a class="sourceLine" id="cb32-3" data-line-number="3">  mod &lt;-<span class="st"> </span><span class="kw">lm</span>(form, mtcars)</a>
-<a class="sourceLine" id="cb32-4" data-line-number="4">  <span class="co"># Make model print prettier:</span></a>
-<a class="sourceLine" id="cb32-5" data-line-number="5">  mod<span class="op">$</span>call<span class="op">$</span>formula &lt;-<span class="st"> </span><span class="kw">as.formula</span>(mod<span class="op">$</span>terms)</a>
-<a class="sourceLine" id="cb32-6" data-line-number="6">  <span class="kw">return</span>(mod)</a>
-<a class="sourceLine" id="cb32-7" data-line-number="7">}</a></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>single_mod &lt;-<span class="st"> </span><span class="cf">function</span>(form) {</span>
+<span id="cb32-2"><a href="#cb32-2"></a>  <span class="co"># Fit lm:</span></span>
+<span id="cb32-3"><a href="#cb32-3"></a>  mod &lt;-<span class="st"> </span><span class="kw">lm</span>(form, mtcars)</span>
+<span id="cb32-4"><a href="#cb32-4"></a>  <span class="co"># Make model print prettier:</span></span>
+<span id="cb32-5"><a href="#cb32-5"></a>  mod<span class="op">$</span>call<span class="op">$</span>formula &lt;-<span class="st"> </span><span class="kw">as.formula</span>(mod<span class="op">$</span>terms)</span>
+<span id="cb32-6"><a href="#cb32-6"></a>  <span class="kw">return</span>(mod)</span>
+<span id="cb32-7"><a href="#cb32-7"></a>}</span></code></pre></div>
 </div>
 <div id="put-both-steps-together" class="section level2">
 <h2>Put both steps together:</h2>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" data-line-number="1">fit_models &lt;-<span class="st"> </span><span class="cf">function</span>(Ys, Xs, n_Xs) {</a>
-<a class="sourceLine" id="cb33-2" data-line-number="2">  forms &lt;-<span class="st"> </span><span class="kw">lapply</span>(Ys, make_forms,</a>
-<a class="sourceLine" id="cb33-3" data-line-number="3">                  <span class="dt">Xs =</span> Xs, <span class="dt">n_Xs =</span> n_Xs)</a>
-<a class="sourceLine" id="cb33-4" data-line-number="4">  forms &lt;-<span class="st"> </span><span class="kw">c</span>(forms, <span class="dt">recursive =</span> <span class="ot">TRUE</span>)</a>
-<a class="sourceLine" id="cb33-5" data-line-number="5">  lms &lt;-<span class="st"> </span><span class="kw">lapply</span>(forms, single_mod)</a>
-<a class="sourceLine" id="cb33-6" data-line-number="6">  <span class="kw">return</span>(lms)</a>
-<a class="sourceLine" id="cb33-7" data-line-number="7">}</a>
-<a class="sourceLine" id="cb33-8" data-line-number="8">model_fits &lt;-<span class="st"> </span><span class="kw">fit_models</span>(Ys, Xs, n_Xs)</a>
-<a class="sourceLine" id="cb33-9" data-line-number="9">model_fits[[<span class="dv">1</span>]]</a></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>fit_models &lt;-<span class="st"> </span><span class="cf">function</span>(Ys, Xs, n_Xs) {</span>
+<span id="cb33-2"><a href="#cb33-2"></a>  forms &lt;-<span class="st"> </span><span class="kw">lapply</span>(Ys, make_forms,</span>
+<span id="cb33-3"><a href="#cb33-3"></a>                  <span class="dt">Xs =</span> Xs, <span class="dt">n_Xs =</span> n_Xs)</span>
+<span id="cb33-4"><a href="#cb33-4"></a>  forms &lt;-<span class="st"> </span><span class="kw">c</span>(forms, <span class="dt">recursive =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb33-5"><a href="#cb33-5"></a>  lms &lt;-<span class="st"> </span><span class="kw">lapply</span>(forms, single_mod)</span>
+<span id="cb33-6"><a href="#cb33-6"></a>  <span class="kw">return</span>(lms)</span>
+<span id="cb33-7"><a href="#cb33-7"></a>}</span>
+<span id="cb33-8"><a href="#cb33-8"></a>model_fits &lt;-<span class="st"> </span><span class="kw">fit_models</span>(Ys, Xs, n_Xs)</span>
+<span id="cb33-9"><a href="#cb33-9"></a>model_fits[[<span class="dv">1</span>]]</span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = mpg ~ cyl + disp + hp + drat, data = mtcars)
