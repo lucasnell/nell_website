@@ -12,7 +12,7 @@ Paginate = 1
   disablePathToLower = true # Do not make the url/path to lowercase
 relativeurls = true
 baseURL = "www.lucasnell.com"
-ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\\.md$"]
 googleAnalytics = "UA-49535058-2"
 
 

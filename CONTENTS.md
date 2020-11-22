@@ -1,4 +1,4 @@
-# `ives_lab` contents
+# `nell_website` contents
 
 This file outlines the file and folder contents present in this repository.
 
@@ -14,7 +14,6 @@ the repository's folder in the Terminal and run the following command: `ls -lha`
 ├── .git
 ├── archetypes
 ├── content
-├── data
 ├── layouts
 ├── public
 ├── static
@@ -30,7 +29,6 @@ the repository's folder in the Terminal and run the following command: `ls -lha`
     `+++` or `---` that contains document-level options.
 * `content`: All the website's non-style, text content. See [below](#content-objects) 
     for more information.
-* `data`: Currently contains nothing. I'm not sure what it's supposed to be used for.
 * `layouts`: HTML files defining styles for the different document types.
     See [below](#layouts-objects)  for more information.
 * `public`: On GitHub, this folder shows up as a link to another GitHub repo, while on the
@@ -57,7 +55,7 @@ the repository's folder in the Terminal and run the following command: `ls -lha`
 ├── README.md
 ├── config.toml
 ├── index.Rmd
-└── ives_lab.Rproj
+└── nell_website.Rproj
 ```
 
 **File descriptions:**
@@ -70,7 +68,7 @@ the repository's folder in the Terminal and run the following command: `ls -lha`
 * `config.toml`: Sets site-level options, such as author, theme, and title.
 * `index.Rmd`: Sets default output to `blogdown:::blogdown_site`, which is necessary for
     building the site. This file shouldn't need edited.
-* `ives_lab.Rproj`: Options that are useful if you edit this repo in RStudio.
+* `nell_website.Rproj`: Options that are useful if you edit this repo in RStudio.
 
 
 
@@ -84,46 +82,26 @@ the repository's folder in the Terminal and run the following command: `ls -lha`
 .
 ├── .gitignore
 ├── _index.md
-├── icon_plot.Rmd
-├── people
-│   ├── _index.md
-│   ├── alumni.md
-│   └── current.md
-├── photos
+├── cv.md
+├── posts
+│   ├── ...
 │   └── _index.md
-├── prospective_students.Rmd
 ├── publications.md
 └── research
-    ├── _index.md
-    ├── interactions_fluctuations.Rmd
-    ├── phylogenetics.Rmd
-    ├── pred_prey.Rmd
-    └── theory_stats.Rmd
+    └── _index.md
 ```
 
 * `.gitignore`: Files for git to ignore. The html files blogdown creates in this folder
     are not necessary to keep in the repo, so I've included this file here to ignore
     html files just in this folder.
 * `_index.md`: Text and yaml options for the home page.
-* `icon_plot.Rmd`: Creates image of plot for the favicon.
-* `people`: People page content.
+* `cv.md`: Page with the CV embedded in it.
+* `posts`: Posts page content.
+    - `...`: Content for each post.
     - `_index.md`: yaml options.
-    - `alumni.md`: Content for the Alumni section.
-    - `current.md`: Content for the Current section.
-* `photos`: Photos page content.
-    - `_index.md`: All the Photos page content.
-* `prospective_students.Rmd`: All content for the Prospective Students page.
 * `publications.md`: All content for the Publications page.
 * `research`: Content for Research page.
     - `_index.md`: yaml options.
-    - `interactions_fluctuations.Rmd`: Content for the section on "Multispecies
-        interactions and environmental fluctuations".
-    - `phylogenetics.Rmd`: Content for the section on "Phylogenetic patterns in
-        comparisons among species and communities".
-    - `pred_prey.Rmd`: Content for the section on "Population dynamics of insect
-        predator-prey systems".
-    - `theory_stats.Rmd`: Content for the section on "Theory, statistics, and complex
-        population dynamics".
 
 
 
@@ -210,11 +188,10 @@ These are not shown because they aren't necessary to explain individually.
 
 * `Ives_CV.pdf`: Tony's current CV.
 * `css`: Style files used throughout website.
-* `font-awesome`: Files necessary to use "Font Awesome" icons. These are the icons used
-    for people's contact information.
-* `fonts`: Font files used for "Academicons" icons. The only icon currently used is the
-    one for Google Scholar.
+* `fonts`: Current empty, but can contain more fonts.
 * `icon`: Image used for the website favicon. This is this image you see on the browser 
     tab next to the site title.
-* `img`: Images used for banner, research page, people page, and photos page.
+* `img`: Images used for banner, research page, post page, and photos page.
+* `pdfs`: PDFs of Biosphere and Natural History articles.
+* `posts`: Images used in the `functionalr` post.
 

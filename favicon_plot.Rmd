@@ -1,0 +1,55 @@
+---
+title: "Website icon plot"
+author: "Lucas Nell"
+date: "2020-11-22"
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+suppressPackageStartupMessages({
+    library(tidyverse)
+})
+```
+
+```{r time_series}
+make_series <- function(alpha, N0, r, sigma, max_t = 100) {
+    
+    r <- rbind(r)
+    row.names(r) <- NULL
+    n_spp <- length(N0)
+    y <- matrix(0, max_t+1, n_spp)
+    y[1,] <- N0
+    for (t in 1:max_t) {
+        rnd <- rnorm(n_spp, sd = sigma)
+        y[t+1,] <- y[t,] * exp(r - y[t,,drop=F] %*% alpha + rnd)
+    }
+    colnames(y) <- letters[1:n_spp]
+    y <- y %>% 
+        as_tibble() %>% 
+        mutate(time = 0:max_t) %>% 
+        gather(spp, N, -time)
+    return(y)
+}
+
+n_spp <- 2
+A <- matrix(0.001, n_spp, n_spp)
+diag(A) <- c(0.005, 0.001)
+
+# .seed <- sample.int(2^31-1, 1)
+# set.seed(.seed)
+set.seed(2132209349)
+D <- make_series(alpha = A, N0 = c(10, 1), r = rep(0.05, n_spp), 
+                 sigma = 0.1, max_t = 100)
+
+ts_plot <- D %>%
+    ggplot(aes(time, N, color = spp)) +
+    geom_line(size = 1) +
+    theme_classic() +
+    theme(axis.text = element_blank(), axis.ticks = element_blank(),
+          axis.title = element_blank()) +
+    scale_color_manual(values = c("firebrick", "dodgerblue4"), guide = FALSE)
+
+ggsave('./static/icon/icon.png', ts_plot, width = 1, height = 1, dpi = 64, units = 'in')
+```
