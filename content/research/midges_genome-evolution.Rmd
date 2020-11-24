@@ -1,0 +1,69 @@
+---
+title: "Effects of complex population dynamics on genome evolution"
+description: ""
+date: 2017-05-09T17:00:28-05:00
+weight: 1
+math: true
+image: "/img/midge_pop.png"
+---
+
+```{r eval = FALSE, echo = FALSE}
+
+library(tidyverse)
+library(readxl)
+
+theme_set(theme_classic() +
+              theme(legend.background = element_blank(),
+                    strip.background = element_blank(),
+                    plot.margin = margin(0.5, 0.5, 0.5, 0.5),
+                    text = element_text(family = "Lato")))
+
+midge_df <- read_excel("~/Box Sync/2020/funding/ASN/Chirisl_Tany_analysis.xlsx",
+                       skip = 1,  col_names = c("year", "chir_a", "chir_b", "chir_ab",
+                                                "tany_a", "tany_b")) %>%
+    select(year, starts_with("tany")) %>%
+    gather("gen", "N", starts_with("tany")) %>%
+    mutate(year = year + ifelse(gen == "tany_a", 0, 0.5)) %>%
+    arrange(year) %>%
+    select(-gen) %>%
+    # For purposes of plotting, I'll just say this is 0.5 instead of zero,
+    # so I can log transform it:
+    mutate(N = ifelse(N == 0, 0.5, N))
+
+
+midge_plot <- midge_df %>%
+    mutate(N = log(N)) %>%
+    ggplot(aes(year, N)) +
+    geom_point(color = 'dodgerblue', size = 1.5) +
+    geom_line(color = 'dodgerblue', size = 0.75) +
+    scale_y_continuous(
+        "Abundance",
+        breaks = log(c(10^(seq(1, 5, 2)))),
+        labels = function(.x) parse(text=paste0("10^{",
+                                                round(log10(exp(.x))), "}"))
+    ) +
+    coord_cartesian(ylim = log(c(min(midge_df$N), 2e6))) +
+    scale_x_continuous(NULL,
+                       breaks = do.call(`:`, as.list(range(as.integer(
+                           midge_df$year)))),
+                       labels = c(rep("", 3),
+                                  map(seq(1980, 2010, 5), ~ c(paste(.x),
+                                                              rep("", 4))),
+                                  2015, recursive = TRUE)) +
+    theme(axis.text = element_text(color = "black")) +
+    NULL
+
+# ggsave("../../static/img/midge_pop.png", midge_plot, width = 4, height = 2,
+#        dpi = 150)
+```
+
+
+How do complex population dynamics structure genomes in wild populations?
+I'm exploring this question with a population of midges in Lake M&yacute;vatn, 
+Iceland, where they have irregular population fluctuations of about 5 orders 
+of magnitude.
+As part of a long-term monitoring project at M&yacute;vatn, 
+Dr. &Aacute;rni Einarsson has estimated midge densities, and 
+collected and stored midge samples since 1977.
+I aim to leverage this time series of whole-genome and ecological data
+to assess how genomic structure is affected by population dynamics.

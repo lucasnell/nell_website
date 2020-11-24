@@ -1,6 +1,8 @@
 {{ define "title"}} {{ .Title }} {{end}}
 {{ define "header"}} {{ partial "header" .}} {{end}}
 
+
+
 {{ define "main"}}
 
 
@@ -24,8 +26,11 @@
             <h3> {{ .Params.description }} </h3>
             {{ end }}
             {{ if .Params.image }}
-            <figure>
+            <figure style="width: 75%;">
                 <img src="{{ .Params.image }}">
+                {{ if .Params.caption }}
+                <figcaption>{{ .Params.caption }}</figcaption>
+                {{ end }}
             </figure>
             {{ end }}
             {{ .Content }}
