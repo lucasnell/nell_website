@@ -6,7 +6,6 @@ url = "software"
 +++
 
 
-## R packages:
 * `jackalope`: 
   [Phylogenomic and high-throughput sequencing simulator](https://jackalope.lucasnell.com)
 * `phyr`: 
@@ -14,7 +13,6 @@ url = "software"
 * `armmr`: 
  [Autoregressive mixed models for community analyses <in
  development>](https://github.com/lucasnell/armmr)
-
-
-
+* `TaJoCGI`:
+  [Find CpG islands in genomes](https://github.com/lucasnell/TaJoCGI)
 
