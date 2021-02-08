@@ -10,16 +10,20 @@ url = ""
 
 {{% person image="/img/portrait.jpg" %}}
 
-I'm a PhD student in the lab of [Dr. Anthony Ives](http://ives.labs.wisc.edu)
-in the [Department of Integrative Biology](http://ibio.wisc.edu/),
-[University of Wisconsin–Madison](http://www.wisc.edu/).
+I'm a PhD student in the
+<a href="http://ives.labs.wisc.edu">Ives lab</a>
+at the 
+<a href="http://www.wisc.edu/">University of Wisconsin–Madison</a>.
 
-My research focuses on how populations are shaped
-by interactions between ecological and evolutionary processes.
-My interests span from species interactions and mechanisms of coexistence
-to maintenance of genetic diversity and genome evolution.
-I address these questions using a combination of experiments, modeling, 
-theory, and population genomics.
+
+My research focuses on how interacting ecological and evolutionary processes
+shape populations and species.
+Processes I find especially interesting span
+from species interactions and mechanisms of coexistence,
+to speciation and genome evolution.
+I use a combination of experiments, theory, and population genomics
+to address these questions at various scales.
+
 
 {{% /person %}}
 

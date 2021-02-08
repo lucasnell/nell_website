@@ -5,7 +5,6 @@ weight = 3
 url = "publications"
 +++
 
-<script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
 
 
 <div class="row auto" style="padding-top: 0.5em;">
@@ -24,25 +23,25 @@ url = "publications"
 
 
 {{% publication_section %}}
-* Northfield TD, Ripa J, __Nell LA__, Ives AR. In press. 
+* Northfield TD, Ripa J, __Nell LA__, Ives AR. 2021. 
   Coevolution, diversification, and alternative states in two-trophic
   communities. *Ecology Letters*.
   {{% img_link link="https://doi.org/10.1111/ele.13639" type="closed" %}}
+* McCary MA, Phillips J, Ramiadantsoa T, __Nell LA__, McCormick AR, 
+  Botsch JC.
+  2021.
+  Transient top‐down and bottom‐up effects of resources pulsed to multiple 
+  trophic levels.
+  *Ecology*.
+  {{% img_link link="https://doi.org/10.1002/ecy.3197" type="closed" %}}
 * Li D, Dinnage R, __Nell LA__, Helmus M, Ives AR.
-  In press.
+  2020.
   <span class="monospace">phyr</span>: an R package for phylogenetic 
   species-distribution 
   modelling in ecological communities.
   *Methods in Ecology and Evolution*.
   {{% img_link link="https://doi.org/10.1111/2041-210X.13471" type="closed" %}}
   {{% img_link link="https://www.biorxiv.org/content/10.1101/2020.02.17.952317v1" type="pdf" %}}
-* McCary MA, Phillips J, Ramiadantsoa T, __Nell LA__, McCormick AR, 
-  Botsch JC.
-  In press.
-  Transient top‐down and bottom‐up effects of resources pulsed to multiple 
-  trophic levels.
-  *Ecology*.
-  {{% img_link link="https://doi.org/10.1002/ecy.3197" type="closed" %}}
 * __Nell LA__. 2020. 
   <span class="monospace">jackalope</span>: a swift, versatile phylogenomic and
   high-throughput sequencing simulator.
