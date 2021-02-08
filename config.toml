@@ -24,3 +24,6 @@ googleAnalytics = "UA-49535058-2"
     Access-Control-Allow-Origin = "*"
     Content-Type = "application/font-woff"
 
+[markup.goldmark.renderer]
+  unsafe= true
+
