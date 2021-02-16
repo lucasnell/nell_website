@@ -25,21 +25,21 @@ url = "publications"
 {{% publication_section %}}
 * Northfield TD, Ripa J, __Nell LA__, Ives AR. 2021. 
   Coevolution, diversification, and alternative states in two-trophic
-  communities. *Ecology Letters*.
+  communities. *Ecology Letters* 24: 269--278.
   {{% img_link link="https://doi.org/10.1111/ele.13639" type="closed" %}}
 * McCary MA, Phillips J, Ramiadantsoa T, __Nell LA__, McCormick AR, 
   Botsch JC.
   2021.
   Transient top‐down and bottom‐up effects of resources pulsed to multiple 
   trophic levels.
-  *Ecology*.
+  *Ecology* 102(1): e03197.
   {{% img_link link="https://doi.org/10.1002/ecy.3197" type="closed" %}}
 * Li D, Dinnage R, __Nell LA__, Helmus M, Ives AR.
   2020.
   <span class="monospace">phyr</span>: an R package for phylogenetic 
   species-distribution 
   modelling in ecological communities.
-  *Methods in Ecology and Evolution*.
+  *Methods in Ecology and Evolution* 11: 1455--1463.
   {{% img_link link="https://doi.org/10.1111/2041-210X.13471" type="closed" %}}
   {{% img_link link="https://www.biorxiv.org/content/10.1101/2020.02.17.952317v1" type="pdf" %}}
 * __Nell LA__. 2020. 
