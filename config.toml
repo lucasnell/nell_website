@@ -4,7 +4,6 @@ theme = "kube"
 description = ""
 Paginate = 1
 [Params]
-  RSSLink = ""
   author = "Lucas A. Nell"
   github = "" # add your github profile name
   twitter = "" # add your twitter profile
