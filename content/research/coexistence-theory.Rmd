@@ -1,0 +1,25 @@
+---
+title: "Coexistence in a general model of coevolving, competing species"
+description: ""
+date: 2017-05-09T17:00:28-05:00
+weight: 3
+image: "/img/theory-talk-summary.jpg"
+caption: "source: calliechappell.com"
+---
+
+
+Theory has yielded many mechanisms that can affect coexistence of
+competing species.
+We're using a general model of coevolving competitors to gain broad insights
+into how coevolution affects coexistence.
+We find that the suite of possible communities is largely determined 
+by tradeoffs and 
+by how evolution by one species affects competition experienced by others.
+These two factors combine with the evolutionary history of resident species
+to determine how permissive communities are to the addition of 
+new species.
+
+
+
+
+
