@@ -1,9 +1,13 @@
 +++
-title = "Software"
+description = ""
+title = "Resources"
 menu = "main"
-weight = 6
-url = "software"
+weight = 5
+url = "resources"
+toc = false
 +++
+<!-- change toc to true if you want a table of contents -->
+
 
 
 * `jackalope`: 
@@ -15,4 +19,7 @@ url = "software"
  development>](https://github.com/lucasnell/armmr)
 * `TaJoCGI`:
   [Find CpG islands in genomes](https://github.com/lucasnell/TaJoCGI)
+
+
+
 

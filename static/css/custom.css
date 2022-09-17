@@ -55,6 +55,11 @@
         max-width: 100%;
         white-space: nowrap; }
 
+/* Space between headers for Resources page */
+.extra-top-margin {
+    margin-top: 1em; }
+
+
 
 /* Making sure menu shows up at 768px size */
 @media (max-width: 768px) {
