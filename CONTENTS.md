@@ -178,7 +178,6 @@ These are not shown because they aren't necessary to explain individually.
 
 ```
 .
-├── Ives_CV.pdf
 ├── css
 ├── font-awesome
 ├── fonts
@@ -186,7 +185,6 @@ These are not shown because they aren't necessary to explain individually.
 └── img
 ```
 
-* `Ives_CV.pdf`: Tony's current CV.
 * `css`: Style files used throughout website.
 * `fonts`: Current empty, but can contain more fonts.
 * `icon`: Image used for the website favicon. This is this image you see on the browser 

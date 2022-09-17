@@ -1,24 +1,26 @@
 ---
-title: "Coexistence in a general model of coevolving, competing species"
+title: "Trait coevolution among competitors and coexistence"
 description: ""
 date: 2017-05-09T17:00:28-05:00
-weight: 3
-image: "/img/theory-talk-summary.jpg"
-caption: "source: calliechappell.com"
+weight: 999
+image: "/img/theory-invader.svg"
 ---
 
 
-Theory has yielded many mechanisms that can affect coexistence of
-competing species.
-We're using a general model of coevolving competitors to gain broad insights
-into how coevolution affects coexistence.
-We find that the suite of possible communities is largely determined 
-by tradeoffs and 
-by how evolution by one species affects competition experienced by others.
-These two factors combine with the evolutionary history of resident species
-to determine how permissive communities are to the addition of 
-new species.
-
+Coevolution among competitors can result in traits that promote 
+niche partitioning and coexistence or traits that promote
+greater conflict and competitive exclusion.
+We used an eco-evolutionary model where competitors "invest" in coexistence- and 
+exclusion-promoting traits to assess when trait coevolution
+should promote coexistence or exclusion.
+We found that communities should often contain both types of traits, but
+exclusion-promoting traits should more strongly influence trait 
+coevolution community-wide.
+We also found that, despite being more influential, species invested relatively
+more in exclusion-promoting traits should be most vulnerable to exclusion by a
+new invader.
+This may make communities containing multiple species with exclusion-promoting
+traits evolutionary transitory.
 
 
 

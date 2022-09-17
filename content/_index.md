@@ -10,19 +10,18 @@ url = ""
 
 {{% person image="/img/portrait.jpg" %}}
 
-I'm a PhD student in the
-<a href="http://ives.labs.wisc.edu">Ives lab</a>
-at the 
-<a href="http://www.wisc.edu/">University of Wisconsin–Madison</a>.
-
-
-My research focuses on how interacting ecological and evolutionary processes
-shape populations and species.
+I am a biologist that studies how interacting ecological and evolutionary
+processes shape populations and species.
 Processes I find especially interesting span
-from species interactions and mechanisms of coexistence,
+from species interactions and mechanisms of coexistence
 to speciation and genome evolution.
-I use a combination of experiments, theory, and population genomics
-to address these questions at various scales.
+Given the conceptual breadth of questions that intrigue me,
+I use a range of approaches (e.g., theory, experiments, population genomics) and
+systems (e.g., insect host--parasitoid, microbial competitors) to address them.
+
+
+I currently work with <a href="https://web.stanford.edu/~fukamit/">Tadashi Fukami</a>
+as an NSF Postdoctoral Research Fellow at Stanford University.
 
 
 {{% /person %}}

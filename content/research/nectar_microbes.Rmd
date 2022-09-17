@@ -1,0 +1,18 @@
+---
+title: "Effects of rapid evolution on alternative community states"
+description: ""
+date: 2022-09-16T17:00:28-05:00
+weight: 1
+image: "/img/monkeyflower.jpg"
+---
+
+Species interactions can often allow for multiple different discrete states, 
+or alternative community states, into which a given community can assemble.
+Which state is realized depends on initial conditions, and
+this role of history makes predicting community outcomes notoriously difficult.
+Feedbacks across spatial scales coupled with coevolution within communities
+further complicates matters.
+I will use the well-described study system of microbes in
+*Diplacus aurantiacus* nectar to study how rapid evolution alters 
+alternative community states at both single-community and metacommunity scales.
+
