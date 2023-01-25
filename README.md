@@ -102,9 +102,8 @@ The People, Publications, and Photos sections use shortcodes.
 3. Make your changes (see the next sections for how to make changes for each page).
 4. Build the website.
     1. Run `blogdown::serve_site()` in R
-    2. Preview it now by going to `127.0.0.1:4321` in a web browser
-    3. When it looks good, stop the `blogdown::serve_site()` function by hitting escape
-        or by clicking the stop button above the console in RStudio
+    2. Preview it now by going to `http://localhost:4321` in a web browser
+    3. When it looks good, stop serving site by running `blogdown::stop_server()`
 5. Commit your changes to the local git repository (the one on your computer).
     - In GitKraken:
         1. Select the `nell_website` repo

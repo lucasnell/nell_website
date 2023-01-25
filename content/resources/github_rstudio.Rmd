@@ -221,4 +221,3 @@ If the above works, then you're successfully using GitHub through RStudio
     - GitKraken: `gitkraken.com`
     - SourceTree: `sourcetreeapp.com`
 - This presentation is available at `lucasnell.com/github_gsis`
-- My email: `lucas@lucasnell.com`
