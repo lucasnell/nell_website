@@ -12,25 +12,21 @@
 
 <div id="kube-component" class="content">
     
-    {{ if .Content }}
-        <h2> Software </h2>
-        <div id="kube-component-large" class="large">
-            {{ .Content }}
-        </div>
-    {{ end }}
-    
-    <h2 class="extra-top-margin"> Posts </h2>
-    <div id="kube-component-large" class="large">
-        <ul>
+    <div class="resources-page">
         
+        {{ if .Content }}
+            {{ .Content }}
+        {{ end }}
+
+        <h2> Posts </h2>
+        <ul>
             {{ range .Data.Pages.ByWeight }}
                 <li>
                     <a href="{{ .Permalink }}">{{ .Title }}</a>
                 </li>
-    
             {{ end }}
-        
         </ul>
+        
     </div>
 
     

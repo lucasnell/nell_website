@@ -23,10 +23,16 @@ url = "publications"
 
 
 {{% publication_section %}}
+* Botsch JC, Zaveri A, __Nell LA__, McCormick AR, Book KR, Phillips JS, 
+  Einarsson Á, Ives AR. 2024.
+  Disentangling the drivers of decadal body size decline in an insect population.
+  *Global Change Biology* 30: e17014.
+  {{% img_link link="https://doi.org/10.1111/gcb.17014" type="open" %}}
 * Northfield TD, Ripa J, __Nell LA__, Ives AR. 2021. 
   Coevolution, diversification, and alternative states in two-trophic
   communities. *Ecology Letters* 24: 269--278.
   {{% img_link link="https://doi.org/10.1111/ele.13639" type="closed" %}}
+  {{% img_link link="http://tinyurl.com/yc7j73m3" type="pdf" %}}
 * McCary MA, Phillips J, Ramiadantsoa T, __Nell LA__, McCormick AR, 
   Botsch JC.
   2021.
@@ -34,6 +40,7 @@ url = "publications"
   trophic levels.
   *Ecology* 102(1): e03197.
   {{% img_link link="https://doi.org/10.1002/ecy.3197" type="closed" %}}
+  {{% img_link link="http://tinyurl.com/yc43vhab" type="pdf" %}}
 * Li D, Dinnage R, __Nell LA__, Helmus M, Ives AR.
   2020.
   <span class="monospace">phyr</span>: an R package for phylogenetic 

@@ -2,7 +2,7 @@
 title: "Functional programming in R"
 date: 2018-10-07T17:00:28-05:00
 author: "Lucas A. Nell"
-weight: 1
+weight: 2
 slug: 'functionalr'
 output:
   blogdown::html_page:

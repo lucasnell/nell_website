@@ -10,6 +10,14 @@ toc = false
 
 
 
+## Teaching
+
+* [Reproducibility through effective coding and data management](https://lucasnell.github.io/pranga/)
+
+
+
+## Software
+
 * `jackalope`: 
   [Phylogenomic and high-throughput sequencing simulator](https://jackalope.lucasnell.com)
 * `phyr`: 
