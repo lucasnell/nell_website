@@ -33,13 +33,19 @@
         <li>
             <div style="font-size: 14pt;">
                 
-                <script language="javascript">
-                TuDjwVzgXZVSyvX();
+                <div id="hasJavaScript" style="display: none">
+                    <!-- Contents hidden when JavaScript is disabled -->
+                    <span class="eml">7861777a717878547379757d783a777b79</span>
+                </div>
+                
+                <div id="noscript">
+                    [Turn on JavaScript to see email address]
+                </div>
+                
+                <script type="text/javascript">
+                    document.getElementById('hasJavaScript').style.display = 'block';
+                    document.getElementById('noscript').style.display = 'none';
                 </script>
-
-                <noscript>
-                    [Turn on JavaScript to see the email address]
-                </noscript>
 
             </div>
         </li>
