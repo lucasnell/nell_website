@@ -58,12 +58,19 @@ midge_plot <- midge_df %>%
 ```
 
 
-How do extreme population fluctuations structure genomes in wild populations?
-I'm exploring this question with a population of midges in Lake M&yacute;vatn, 
+Long-duration bottlenecks are known to reduce genetic diversity, but what 
+happens when populations experience frequent, short-duration bottlenecks?
+How does this vary across the genome?
+I'm exploring these questions with a population of midges in Lake M&yacute;vatn, 
 Iceland, where they have irregular population fluctuations of about 5 orders 
 of magnitude.
-As part of a long-term monitoring project at M&yacute;vatn, 
-Dr. &Aacute;rni Einarsson has estimated midge densities, and 
-collected and stored midge samples since 1977.
+The Lake M&yacute;vatn long-term monitoring project
+(led by Dr. &Aacute;rni Einarsson) has
+gathered midge densities, environmental data, 
+and abundances for many other species at M&yacute;vatn since 1977.
+They have also collected and stored midge samples across this same period,
+which we used to generate whole-genome sequencing that spans 24 years 
+and 3 major population crashes.
 I am leveraging this time series of whole-genome and ecological data
-to assess how genomic structure is affected by these extreme population dynamics.
+to assess how genomic structure is affected by extreme population dynamics,
+and how these effects interact with biotic and abiotic factors.
