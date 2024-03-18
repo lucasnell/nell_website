@@ -19,10 +19,19 @@ url = "publications"
 <div class="col"> <img src="../img/pdf.svg" style="height:20px" />
 = PDF
 </div>
+<div class="col"> * = mentored undergrad author </div>
 </div>
 
+<!---
+__Nell LA__, Weng YM, Phillips JS, Botsch JC, Book KR, Einarsson Á, Ives AR, Schoville SD. Shared features underlying compact genomes and extreme habitat use in chironomid midges. Accepted (minor revision) at *Genome Biology and Evolution*.
+-->
 
 {{% publication_section %}}
+* __Nell LA__, Kishinevsky M, Bosch MJ, Sinclair C\*, Bhat K\*, Ernst N\*, 
+  Boulaleh H\*, Ives AR. 2024. 
+  Dispersal stabilizes coupled ecological and evolutionary dynamics in a 
+  host-parasitoid system. *Science* 383(6688): 1240-1244.
+  {{% img_link link="https://www.science.org/stoken/author-tokens/ST-1758/full" type="pdf" %}}
 * Botsch JC, Zaveri A, __Nell LA__, McCormick AR, Book KR, Phillips JS, 
   Einarsson Á, Ives AR. 2024.
   Disentangling the drivers of decadal body size decline in an insect population.
