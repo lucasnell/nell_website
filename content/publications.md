@@ -22,11 +22,13 @@ url = "publications"
 <div class="col"> * = mentored undergrad author </div>
 </div>
 
-<!---
-__Nell LA__, Weng YM, Phillips JS, Botsch JC, Book KR, Einarsson Á, Ives AR, Schoville SD. Shared features underlying compact genomes and extreme habitat use in chironomid midges. Accepted (minor revision) at *Genome Biology and Evolution*.
--->
 
 {{% publication_section %}}
+* __Nell LA__, Weng YM, Phillips JS, Botsch JC, Book KR, Einarsson Á, Ives AR, 
+  Schoville SD. 2024. 
+  Shared features underlying compact genomes and extreme habitat use 
+  in chironomid midges. *Genome Biology and Evolution* 16(5): evae086.
+  {{% img_link link="https://doi.org/10.1093/gbe/evae086" type="open" %}}
 * __Nell LA__, Kishinevsky M, Bosch MJ, Sinclair C\*, Bhat K\*, Ernst N\*, 
   Boulaleh H\*, Ives AR. 2024. 
   Dispersal stabilizes coupled ecological and evolutionary dynamics in a 
