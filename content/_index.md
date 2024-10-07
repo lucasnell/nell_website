@@ -10,18 +10,17 @@ url = ""
 
 {{% person image="/img/portrait.jpg" %}}
 
-I am a biologist that studies how interacting ecological and evolutionary
-processes shape organisms at various biological scales.
-Two major themes in my research are
-(1) reciprocal effects between trait evolution and species interactions and
-(2) molecular evolution and population ecology.
+I am a biologist that studies how populations and communities are shaped by
+interacting ecological and evolutionary dynamics that play out across space.
 Given the conceptual breadth of questions that intrigue me,
 I use a range of approaches (e.g., theory, experiments, population genomics) and
 systems (e.g., insect host--parasitoid, microbial competitors) to address them.
 
 
-I currently work with <a href="https://web.stanford.edu/~fukamit/">Tadashi Fukami</a>
-as an NSF Postdoctoral Research Fellow at Stanford University.
+I currently work with 
+<a href="https://ecologyandevolution.cornell.edu/megan-greischar">Megan Greischar</a>
+as a Postdoctoral Fellow at the
+<a href="https://cihmid.cornell.edu">Cornell Institute of Host-Microbe Interactions and Disease</a>.
 
 
 {{% /person %}}

@@ -24,6 +24,10 @@ url = "publications"
 
 
 {{% publication_section %}}
+* Chappell CR, Goddard PC, Golden L, Hernandez J, Chavez DO, Hossine M, 
+  Paredes SH, VanValkenburg E, __Nell LA__, Fukami T, Dhami MK.
+  In press. Transcriptional responses to priority effects in nectar yeast.
+  *Molecular Ecology*
 * __Nell LA__, Weng YM, Phillips JS, Botsch JC, Book KR, Einarsson Á, Ives AR, 
   Schoville SD. 2024. 
   Shared features underlying compact genomes and extreme habitat use 

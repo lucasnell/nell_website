@@ -20,7 +20,7 @@ We also found that, despite being more influential, species invested relatively
 more in exclusion-promoting traits should be most vulnerable to exclusion by a
 new invader.
 This may make communities containing multiple species with exclusion-promoting
-traits evolutionary transitory.
+traits transitory.
 
 
 
