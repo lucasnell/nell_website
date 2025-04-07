@@ -29,7 +29,7 @@
             <figure style="width: 75%;">
                 <img src="{{ .Params.image }}">
                 {{ if .Params.caption }}
-                <figcaption>{{ .Params.caption }}</figcaption>
+                <figcaption>{{ .Params.caption | markdownify }}</figcaption>
                 {{ end }}
             </figure>
             {{ end }}

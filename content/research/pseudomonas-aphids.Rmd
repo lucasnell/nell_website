@@ -1,0 +1,30 @@
+---
+title: "When do spatial dynamics change outcomes of species interactions?"
+description: ""
+date: 2025-04-01T17:00:28-05:00
+weight: 1
+image: "/img/CIHMID-diagram-simple.svg"
+caption: "Virus-spreading aphids are both repelled and killed by epiphytic *Pseudomonas* bacteria"
+---
+
+
+The effects of species interactions on communities often change with conditions
+in ways that remain unclear.
+Common plant epiphytic bacteria in the genus *Pseudomonas* can kill and
+repel pea aphids that transmit costly viruses among pea plants,
+which could provide local benefits to peas.
+However, repelling of aphids could lead to greater crowding and 
+disproportionately more production of winged aphids on low-*Pseudomonas* plants.
+An increase in winged aphids should increase aphid-mediated virus 
+transmission, resulting in negative effects on pea plants at larger 
+spatial scales. 
+Further complicating these interactions, plant viruses can often attract 
+insect vectors, and by reducing aphid densities, aphid predators and 
+parasitoids may modify how this symbiosis affects pea plants by reducing 
+aphid crowding. 
+We are using mathematical modeling to understand when the *Pseudomonas*--pea 
+symbiosis is a net benefit versus cost for pea plants.
+Our results will provide a rare case study of how spatial scale and 
+community interactions can together dictate the nature of multipartite
+and multitrophic interactions.
+

@@ -17,10 +17,13 @@ I use a range of approaches (e.g., theory, experiments, population genomics) and
 systems (e.g., insect host--parasitoid, microbial competitors) to address them.
 
 
-I currently work with 
-<a href="https://ecologyandevolution.cornell.edu/megan-greischar">Megan Greischar</a>
-as a Postdoctoral Fellow at the
-<a href="https://cihmid.cornell.edu">Cornell Institute of Host-Microbe Interactions and Disease</a>.
+I am currently a Postdoctoral Fellow at the
+<a href="https://cihmid.cornell.edu">Cornell Institute of Host-Microbe
+Interactions and Disease</a>
+where I work with
+<a href="https://ecologyandevolution.cornell.edu/megan-greischar">Megan Greischar</a>,
+<a href="https://cals.cornell.edu/tory-hendry">Tory Hendry</a>, and
+<a href="https://cals.cornell.edu/andrew-hein">Andrew Hein</a>.
 
 
 {{% /person %}}

@@ -1,48 +1,43 @@
 ---
-title: "Effects of population fluctuations on genome evolution in the wild"
+title: "How does population ecology shape genome evolution?"
 description: ""
 date: 2017-05-09T17:00:28-05:00
 weight: 998
 math: true
-image: "/img/midge_pop.png"
+image: "/img/midge_pop.svg"
+caption: "Population dynamics of *Tanytarsus gracilentus* at Lake M&yacute;vatn, Iceland"
 ---
 
 ```{r eval = FALSE, echo = FALSE}
 
 library(tidyverse)
-library(readxl)
 
 theme_set(theme_classic() +
               theme(legend.background = element_blank(),
                     strip.background = element_blank(),
-                    plot.margin = margin(0.5, 0.5, 0.5, 0.5),
-                    text = element_text(family = "Lato")))
+                    plot.margin = margin(0.5, 0.5, 0.5, 0.5)))
 
-midge_df <- read_excel("~/Box Sync/2020/funding/ASN/Chirisl_Tany_analysis.xlsx",
-                       skip = 1,  col_names = c("year", "chir_a", "chir_b", "chir_ab",
-                                                "tany_a", "tany_b")) %>%
-    select(year, starts_with("tany")) %>%
-    gather("gen", "N", starts_with("tany")) %>%
-    mutate(year = year + ifelse(gen == "tany_a", 0, 0.5)) %>%
-    arrange(year) %>%
-    select(-gen) %>%
-    # For purposes of plotting, I'll just say this is 0.5 instead of zero,
-    # so I can log transform it:
-    mutate(N = ifelse(N == 0, 0.5, N))
+midge_df <- read_csv("~/GitHub/Wisconsin/tany_time/chironomid-abundances.csv", 
+                     show_col_types = FALSE) |>
+    select(year, starts_with("tany")) |>
+    pivot_longer(starts_with("tany"), names_to = "gen", values_to = "N") |> 
+    mutate(year = year + ifelse(gen == "tany_a", 0, 0.5)) |>
+    arrange(year) |>
+    select(-gen)
 
 
-midge_plot <- midge_df %>%
-    mutate(N = log(N)) %>%
+midge_plot <- midge_df |>
+    mutate(N = log1p(N)) |>
     ggplot(aes(year, N)) +
-    geom_point(color = 'dodgerblue', size = 1.5) +
-    geom_line(color = 'dodgerblue', size = 0.75) +
+    geom_point(color = "dodgerblue", size = 1.5) +
+    geom_line(color = "dodgerblue", size = 0.75) +
     scale_y_continuous(
         "Abundance",
-        breaks = log(c(10^(seq(1, 5, 2)))),
+        breaks = log1p(c(10^(seq(1, 5, 2)))),
         labels = function(.x) parse(text=paste0("10^{",
                                                 round(log10(exp(.x))), "}"))
     ) +
-    coord_cartesian(ylim = log(c(min(midge_df$N), 2e6))) +
+    coord_cartesian(ylim = log1p(c(min(midge_df$N), 2e6))) +
     scale_x_continuous(NULL,
                        breaks = do.call(`:`, as.list(range(as.integer(
                            midge_df$year)))),
@@ -53,24 +48,37 @@ midge_plot <- midge_df %>%
     theme(axis.text = element_text(color = "black")) +
     NULL
 
-# ggsave("../../static/img/midge_pop.png", midge_plot, width = 4, height = 2,
-#        dpi = 150)
+# ggsave("./static/img/midge_pop.svg", midge_plot, width = 4, height = 2)
 ```
 
 
-Long-duration bottlenecks are known to reduce genetic diversity, but what 
-happens when populations experience frequent, short-duration bottlenecks?
-How does this vary across the genome?
-I'm exploring these questions with a population of midges in Lake M&yacute;vatn, 
-Iceland, where they have irregular population fluctuations of about 5 orders 
-of magnitude.
-The Lake M&yacute;vatn long-term monitoring project
-(led by Dr. &Aacute;rni Einarsson) has
-gathered midge densities, environmental data, 
-and abundances for many other species at M&yacute;vatn since 1977.
-They have also collected and stored midge samples across this same period,
-which we used to generate whole-genome sequencing that spans 24 years 
-and 3 major population crashes.
-I am leveraging this time series of whole-genome and ecological data
-to assess how genomic structure is affected by extreme population dynamics,
-and how these effects interact with biotic and abiotic factors.
+
+I am leveraging the extreme biology of chironomid midges
+(family Chironomidae, order Diptera) to understand how population ecology
+shapes genome evolution in natural populations.
+Chironomids are the most widely distributed group of freshwater insects
+and inhabit a vast range of habitats, many of which are inhospitable
+(e.g., Antarctica, hot springs).
+Yet we know little about the shared features underlying chironomids'
+ability to tolerate extreme environments and 
+how they achieve this despite especially compact genomes.
+In a recent paper, I described a number of candidate genes and gene families
+that may relate to chironomid tolerance to stress and
+show that their compact genomes are via reductions in repeat and 
+non-coding elements
+[(Nell et al. 2024, *Genome Biology and Evolution*)](https://doi.org/10.1093/gbe/evae086).
+In a related project, I am using an example of extreme population dynamics
+to understand what happens to genetic diversity when 
+populations experience frequent, short-duration bottlenecks.
+The population of *Tanytarsus gracilentus* at Lake M&yacute;vatn, Iceland,
+has irregular population fluctuations of about 5 orders of magnitude.
+In collaboration with &Aacute;rni Einarsson (Director, M&yacute;vatn Research
+Station), I collected and sequenced *T.&nbsp;gracilentus* samples from M&yacute;vatn that
+spanned 24 years and 3 population crashes, and from 15 other lakes across 
+northern Iceland.
+Our results so far are consistent with theoretical predictions about the 
+effects of short-duration population crashes. 
+Further analyses will provide greater insights into how the complex 
+population dynamics present in many real populations shapes genome-wide 
+patterns of genetic diversity.
+

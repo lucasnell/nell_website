@@ -1,10 +1,10 @@
 ---
-title: "Maintenance of variation for ongoing eco-evo dynamics"
+title: "What maintains feedbacks between ecology and evolution?"
 description: ""
 date: 2017-05-09T17:00:28-05:00
-weight: 997
+weight: 2
 image: "/img/aphids_parasitoid.jpg"
-caption: "source: alexanderwild.com"
+caption: "Parasitoid *Aphidius ervi* parasitizing a pea aphid; image source: alexanderwild.com"
 ---
 
 
@@ -15,10 +15,12 @@ processes must be maintained, yet this fundamental component of eco-evo
 dynamics has received little attention.
 Pea aphids can evolve resistance to parasitoid wasps rapidly enough to affect 
 the host--parasitoid dynamics.
-Through long-term lab experiments and simulations, we show that aphids 
-dispersing among patches that vary in parasitoid abundance can produce both
-the ecological stability and balancing selection necessary for ongoing
-eco-evo dynamics.
-
+Through long-term lab experiments and simulations,
+we showed that moderate aphid dispersal among fields combined with
+non-random parasitoid dispersal
+cause both species coexistence and balancing selection.
+These two forms of dispersal together resulted in stable, persistent 
+eco-evo dynamics
+[(Nell et al., *Science*)](https://www.science.org/stoken/author-tokens/ST-1758/full).
 
 
