@@ -2,7 +2,8 @@ languageCode = "en-us"
 title = "Lucas A. Nell"
 theme = "kube"
 description = ""
-Paginate = 1
+[pagination]
+  pagerSize = 1
 [Params]
   author = "Lucas A. Nell"
   github = "" # add your github profile name

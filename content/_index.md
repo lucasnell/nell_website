@@ -10,11 +10,18 @@ url = ""
 
 {{% person image="/img/portrait.jpg" %}}
 
-I am a biologist that studies how populations and communities are shaped by
-interacting ecological and evolutionary dynamics that play out across space.
-Given the conceptual breadth of questions that intrigue me,
-I use a range of approaches (e.g., theory, experiments, population genomics) and
-systems (e.g., insect host--parasitoid, microbial competitors) to address them.
+
+
+What happens when we take a well-understood ecological system, 
+like a simple community of interacting species, and drop it into a more complex
+landscape of interconnected communities?
+What if we instead allow each species to evolve traits in response to one another?
+These types of interactions across biological and spatial scales
+can fundamentally alter ecological and evolutionary dynamics.
+My research addresses such questions using a combination of data-intensive
+empirical methods (e.g., experiments, genomics)
+and mathematical models based on specific biology, primarily in insect systems.
+
 
 
 I am currently a Postdoctoral Fellow at the

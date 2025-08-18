@@ -2,7 +2,7 @@
 description = ""
 title = "Resources"
 menu = "main"
-weight = 5
+weight = 4
 url = "resources"
 toc = false
 +++
