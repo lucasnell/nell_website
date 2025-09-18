@@ -25,8 +25,8 @@ url = "publications"
 
 {{% publication_section %}}
 * Chappell CR, Goddard PC, Golden L, Hernandez J, Chavez DO, Hossine M, 
-  Paredes SH, VanValkenburg E, __Nell LA__, Fukami T, Dhami MK.
-  2025. Transcriptional responses to priority effects in nectar yeast.
+  Paredes SH, VanValkenburg E, __Nell LA__, Fukami T, Dhami MK. 2025.
+  Transcriptional responses to priority effects in nectar yeast.
   *Molecular Ecology* 34(15): e17553.
 * __Nell LA__, Weng YM, Phillips JS, Botsch JC, Book KR, Einarsson Á, Ives AR, 
   Schoville SD. 2024. 
