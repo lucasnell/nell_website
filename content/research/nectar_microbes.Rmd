@@ -29,4 +29,4 @@ This partitioning facilitates mutual invasibility and stable regional
 coexistence of microbes.
 Our results highlight the importance of interactions between dispersal and 
 community composition across scales in shaping patterns of species coexistence
-(Nell et al. submitted; [preprint](https://doi.org/10.1101/2025.03.31.646410)).
+(Nell et al. in prep.; [preprint](https://doi.org/10.1101/2025.03.31.646410)).

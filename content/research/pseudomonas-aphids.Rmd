@@ -2,7 +2,7 @@
 title: "When do spatial dynamics change outcomes of species interactions?"
 description: ""
 date: 2025-04-01T17:00:28-05:00
-weight: 1
+weight: 998
 image: "/img/CIHMID-diagram-simple.svg"
 caption: "Virus-spreading aphids are both repelled and killed by epiphytic *Pseudomonas* bacteria"
 ---
@@ -22,9 +22,14 @@ Further complicating these interactions, plant viruses can often attract
 insect vectors, and by reducing aphid densities, aphid predators and 
 parasitoids may modify how this symbiosis affects pea plants by reducing 
 aphid crowding. 
-We are using mathematical modeling to understand when the *Pseudomonas*--pea 
+We used mathematical modeling to understand when the *Pseudomonas*--pea 
 symbiosis is a net benefit versus cost for pea plants.
-Our results will provide a rare case study of how spatial scale and 
+Our results indicate that by killing aphids, *Pseudomonas* is usually beneficial
+to pea plants.
+However, when natural enemies (parasitoid wasps) suppress
+aphid abundances, they can make the pseudo-crowding effect more pronounced
+and cause *Pseudomonas* presence to have a net negative effect on pea plants.
+Our results provide a rare case study of how spatial scale and 
 community interactions can together dictate the nature of multipartite
 and multitrophic interactions.
 

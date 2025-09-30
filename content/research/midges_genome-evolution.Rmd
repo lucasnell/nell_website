@@ -2,7 +2,7 @@
 title: "How does population ecology shape genome evolution?"
 description: ""
 date: 2017-05-09T17:00:28-05:00
-weight: 998
+weight: 2
 math: true
 image: "/img/midge_pop.svg"
 caption: "Population dynamics of *Tanytarsus gracilentus* at Lake M&yacute;vatn, Iceland"
@@ -77,7 +77,11 @@ Station), I collected and sequenced *T.&nbsp;gracilentus* samples from M&yacute;
 spanned 24 years and 3 population crashes, and from 15 other lakes across 
 northern Iceland.
 Our results so far are consistent with theoretical predictions about the 
-effects of short-duration population crashes. 
+effects of short-duration population crashes:
+Population crashes cause a relative absence of rare alleles but have 
+only moderate effects on overall nucleotide diversity.
+We have also identified a number of genes under selection due to midge abundance,
+mostly related to male fertility and responses to starvation.
 Further analyses will provide greater insights into how the complex 
 population dynamics present in many real populations shapes genome-wide 
 patterns of genetic diversity.

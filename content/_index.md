@@ -11,26 +11,18 @@ url = ""
 {{% person image="/img/portrait.jpg" %}}
 
 
-
-What happens when we take a well-understood ecological system, 
-like a simple community of interacting species, and drop it into a more complex
-landscape of interconnected communities?
-What if we instead allow each species to evolve traits in response to one another?
-These types of interactions across biological and spatial scales
-can fundamentally alter ecological and evolutionary dynamics.
-My research addresses such questions using a combination of data-intensive
-empirical methods (e.g., experiments, genomics)
-and mathematical models based on specific biology, primarily in insect systems.
+I am a biologist that studies how interacting ecological and evolutionary 
+dynamics can transform patterns of biodiversity, from genes to communities.
+My approach combines data-intensive empirical methods (e.g., experiments, genomics)
+with mathematical models based on specific biology, primarily in insect systems.
+Because my empirical work often requires complex data analysis, 
+I also <a href="resources">develop software</a> where the need arises.
 
 
-
-I am currently a Postdoctoral Fellow at the
-<a href="https://cihmid.cornell.edu">Cornell Institute of Host-Microbe
-Interactions and Disease</a>
-where I work with
-<a href="https://ecologyandevolution.cornell.edu/megan-greischar">Megan Greischar</a>,
-<a href="https://cals.cornell.edu/tory-hendry">Tory Hendry</a>, and
-<a href="https://cals.cornell.edu/andrew-hein">Andrew Hein</a>.
+I am currently a Postdoctoral Fellow in the
+<a href="https://ecologyandevolution.cornell.edu">Department of Ecology & Evolutionary Biology</a>
+at Cornell University, where I work with
+<a href="https://ecologyandevolution.cornell.edu/megan-greischar">Megan Greischar</a>.
 
 
 {{% /person %}}
